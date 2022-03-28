@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "slaviccraft:blocks/turnip_stage0"
+  }
+}

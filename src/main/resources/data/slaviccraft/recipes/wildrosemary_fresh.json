@@ -1,0 +1,15 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "slaviccraft:wildrosemary"
+        }
+    },
+    "result": {
+        "item": "slaviccraft:wildrosemary_fresh",
+        "count": 1
+    }
+}

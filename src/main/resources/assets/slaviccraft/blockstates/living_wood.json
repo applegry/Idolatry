@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=south":  { "model": "slaviccraft:block/living_wood","y":180},
+    "facing=north":  { "model": "slaviccraft:block/living_wood","y":0},
+    "facing=east":  { "model": "slaviccraft:block/living_wood","y":90},
+    "facing=west":  { "model": "slaviccraft:block/living_wood","y":270}
+  }
+}
+
+

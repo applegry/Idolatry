@@ -1,0 +1,6 @@
+ {
+"parent": "item/handheld",
+"textures": {
+  "layer0": "slaviccraft:items/tearing_wreath_armor"
+   }
+}

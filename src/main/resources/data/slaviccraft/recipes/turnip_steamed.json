@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "slaviccraft:turnip"
+  },
+  "result": "slaviccraft:turnip_steamed",
+  "experience": 0.35,
+  "cookingtime": 200
+}

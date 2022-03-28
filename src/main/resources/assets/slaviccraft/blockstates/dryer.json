@@ -1,0 +1,6 @@
+{
+  "variants": {
+   "attached=false": { "model": "slaviccraft:block/dryer" },
+   "attached=true": { "model": "slaviccraft:block/dryer_top" }
+  }
+}

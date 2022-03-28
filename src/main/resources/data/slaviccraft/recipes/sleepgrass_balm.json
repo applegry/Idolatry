@@ -1,0 +1,18 @@
+﻿{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "slaviccraft:sleepgrass_powder"
+        },
+        {
+            "item": "slaviccraft:linen_ground"
+        },
+        {
+            "item": "minecraft:honeycomb"
+        }
+    ],
+    "result": {
+        "item": "slaviccraft:sleepgrass_balm",
+        "count": 1
+    }
+}

@@ -1,0 +1,21 @@
+{
+  "variants": {
+    "": [
+      {
+        "model": "slaviccraft:block/duckweed"
+      },
+      {
+        "model": "slaviccraft:block/duckweed_2",
+        "y": 90
+      },
+      {
+        "model": "slaviccraft:block/duckweed_1",
+        "y": 180
+      },
+      {
+        "model": "slaviccraft:block/duckweed",
+        "y": 270
+      }
+    ]
+  }
+}

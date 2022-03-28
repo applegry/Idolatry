@@ -1,0 +1,15 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "slaviccraft:firewhip"
+        }
+    },
+    "result": {
+        "item": "slaviccraft:firewhip_fresh",
+        "count": 1
+    }
+}

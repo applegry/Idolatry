@@ -1,0 +1,8 @@
+{
+"parent": "slaviccraft:custom/elixir_cauldron_water",
+	"textures": {
+		"particle": "minecraft:block/dirt",
+		"2": "slaviccraft:blocks/elixir_cauldron_lit",
+		"3": "minecraft:block/water_still"
+	}
+}

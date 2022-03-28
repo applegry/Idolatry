@@ -1,0 +1,6 @@
+{
+  "parent": "block/cube_all",
+  "textures": {
+    "all": "slaviccraft:blocks/living_stone_block"
+  }
+}

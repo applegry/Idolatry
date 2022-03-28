@@ -1,0 +1,12 @@
+{
+  "variants": {
+    "enabled=false,facing=south":  { "model": "slaviccraft:block/house_brownie_altar_empty","y":180},
+    "enabled=false,facing=north":  { "model": "slaviccraft:block/house_brownie_altar_empty","y":0},
+    "enabled=false,facing=east":  { "model": "slaviccraft:block/house_brownie_altar_empty","y":90},
+    "enabled=false,facing=west":  { "model": "slaviccraft:block/house_brownie_altar_empty","y":270},
+    "enabled=true,facing=south":  { "model": "slaviccraft:block/house_brownie_altar_full","y":180},
+    "enabled=true,facing=north":  { "model": "slaviccraft:block/house_brownie_altar_full","y":0},
+    "enabled=true,facing=east":  { "model": "slaviccraft:block/house_brownie_altar_full","y":90},
+    "enabled=true,facing=west":  { "model": "slaviccraft:block/house_brownie_altar_full","y":270}
+  }
+}

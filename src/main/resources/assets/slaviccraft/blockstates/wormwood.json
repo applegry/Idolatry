@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "upper=false": { "model": "slaviccraft:wormwood_bottom" },
+        "upper=true": { "model": "slaviccraft:wormwood_top" }
+    }
+}

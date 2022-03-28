@@ -1,0 +1,6 @@
+{
+    "variants": {
+        "main=false": { "model": "slaviccraft:small_altar" },
+        "main=true": { "model": "slaviccraft:small_altar_main" }
+    }
+}

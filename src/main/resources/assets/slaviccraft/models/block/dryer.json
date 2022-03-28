@@ -1,0 +1,8 @@
+{
+"parent": "slaviccraft:custom/dryer",
+	"textures": {
+		"all":"slaviccraft:blocks/dryer",
+		"0": "slaviccraft:blocks/dryer",
+		"particle": "slaviccraft:blocks/dryer"
+	}
+}

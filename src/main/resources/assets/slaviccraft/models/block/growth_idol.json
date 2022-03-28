@@ -1,0 +1,7 @@
+{
+"parent": "slaviccraft:custom/idol",
+	"textures": {
+		"0": "slaviccraft:blocks/idols/growth_idol",
+		"particle": "slaviccraft:blocks/idols/growth_idol"
+	}
+}

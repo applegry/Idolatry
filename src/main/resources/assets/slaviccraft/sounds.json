@@ -1,0 +1,12 @@
+{
+	"blood_get":{
+		"category":"master",
+		"subtitle":"slaviccraft.bloodget",
+		"sounds":["slaviccraft:blood_get"]
+	},
+	"pounder":{
+		"category":"master",
+		"subtitle":"slaviccraft.pounder",
+		"sounds":["slaviccraft:pounder"]
+	}
+}

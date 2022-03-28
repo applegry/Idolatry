@@ -1,0 +1,6 @@
+{
+  "parent": "item/handheld",
+  "textures": {
+    "layer0": "slaviccraft:items/ench_birch_bark"
+     }
+}

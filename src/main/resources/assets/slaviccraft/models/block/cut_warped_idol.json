@@ -1,0 +1,7 @@
+{
+"parent": "slaviccraft:custom/cutlog",
+	"textures": {
+		"0": "slaviccraft:blocks/idols/cut_warped_idol",
+		"particle": "slaviccraft:blocks/idols/cut_warped_idol"
+	}
+}

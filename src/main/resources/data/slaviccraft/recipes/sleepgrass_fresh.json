@@ -1,0 +1,15 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "slaviccraft:sleepgrass"
+        }
+    },
+    "result": {
+        "item": "slaviccraft:sleepgrass_fresh",
+        "count": 1
+    }
+}

@@ -1,0 +1,7 @@
+{
+"parent": "slaviccraft:custom/cutlog",
+	"textures": {
+		"0": "slaviccraft:blocks/cut_log/cut_jungle_log",
+		"particle": "slaviccraft:blocks/cut_log/cut_jungle_log"
+	}
+}

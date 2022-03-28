@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "slaviccraft:block/betony_bottom"
+    },
+    "half=upper": {
+      "model": "slaviccraft:block/betony_top"
+    }
+  }
+}

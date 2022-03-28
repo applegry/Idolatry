@@ -1,0 +1,10 @@
+{
+  "required": true,
+  "package": "com.velesgod.slaviccraft.mixin",
+  "compatibilityLevel": "JAVA_17",
+  "refmap": "slaviccraft.refmap.json",
+  "mixins": [
+    "SlavicItemRenderer"
+  ],
+  "minVersion": "0.8"
+}

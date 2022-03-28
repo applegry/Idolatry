@@ -1,0 +1,15 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "slaviccraft:swordblade"
+        }
+    },
+    "result": {
+        "item": "slaviccraft:swordblade_fresh",
+        "count": 1
+    }
+}

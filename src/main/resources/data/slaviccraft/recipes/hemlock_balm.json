@@ -1,0 +1,18 @@
+﻿{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "slaviccraft:hemlock_powder"
+        },
+        {
+            "item": "slaviccraft:linen_ground"
+        },
+        {
+            "item": "minecraft:honeycomb"
+        }
+    ],
+    "result": {
+        "item": "slaviccraft:hemlock_balm",
+        "count": 1
+    }
+}

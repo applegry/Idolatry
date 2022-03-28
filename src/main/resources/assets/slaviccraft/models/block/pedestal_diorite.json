@@ -1,0 +1,8 @@
+{
+"parent": "slaviccraft:custom/pedestal",
+	"textures": {
+		"all":"slaviccraft:blocks/pedestal_diorite",
+		"1": "slaviccraft:blocks/pedestal_diorite",
+		"particle": "slaviccraft:blocks/pedestal_diorite"
+	}
+}

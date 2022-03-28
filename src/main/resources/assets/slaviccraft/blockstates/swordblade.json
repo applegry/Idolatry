@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "slaviccraft:block/swordblade_bottom"
+    },
+    "half=upper": {
+      "model": "slaviccraft:block/swordblade_top"
+    }
+  }
+}

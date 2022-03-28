@@ -1,0 +1,8 @@
+{
+"parent": "slaviccraft:custom/elixir_cauldron",
+		"textures": {
+		"particle": "minecraft:block/cauldron_side",
+			"2": "slaviccraft:blocks/elixir_cauldron_lit"
+	
+	}
+}

@@ -1,0 +1,6 @@
+ {
+"parent": "item/handheld",
+"textures": {
+  "layer0": "slaviccraft:items/purity_wreath_armor"
+   }
+}

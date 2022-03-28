@@ -1,0 +1,7 @@
+{
+"parent": "slaviccraft:custom/duckweed_1",
+	"textures": {
+		"0": "slaviccraft:blocks/duckweed_1",
+		"particle": "slaviccraft:blocks/duckweed_1"
+	}
+}

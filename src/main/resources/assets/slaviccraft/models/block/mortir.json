@@ -1,0 +1,9 @@
+{
+"parent": "slaviccraft:custom/mortarpestle",
+	"textures": {
+		"all": "slaviccraft:blocks/mortir",
+		"1": "slaviccraft:blocks/mortir",
+		"particle": "minecraft:block/stone",
+		"missing": "slaviccraft:blocks/mortir"
+	}
+}

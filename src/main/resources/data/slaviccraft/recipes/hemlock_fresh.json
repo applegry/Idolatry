@@ -1,0 +1,15 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "slaviccraft:hemlock"
+        }
+    },
+    "result": {
+        "item": "slaviccraft:hemlock_fresh",
+        "count": 1
+    }
+}

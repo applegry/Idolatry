@@ -1,0 +1,8 @@
+{
+"parent": "slaviccraft:custom/pedestal",
+	"textures": {
+		"all":"slaviccraft:blocks/pedestal_granite",
+		"1": "slaviccraft:blocks/pedestal_granite",
+		"particle": "slaviccraft:blocks/pedestal_granite"
+	}
+}

@@ -1,0 +1,15 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "slaviccraft:hellebore"
+        }
+    },
+    "result": {
+        "item": "slaviccraft:hellebore_fresh",
+        "count": 1
+    }
+}

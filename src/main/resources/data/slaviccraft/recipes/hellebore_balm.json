@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shapeless",
+    "ingredients": [
+        {
+            "item": "slaviccraft:hellebore_powder"
+        },
+        {
+            "item": "slaviccraft:linen_ground"
+        },
+        {
+            "item": "minecraft:honeycomb"
+        }
+    ],
+    "result": {
+        "item": "slaviccraft:hellebore_balm",
+        "count": 1
+    }
+}

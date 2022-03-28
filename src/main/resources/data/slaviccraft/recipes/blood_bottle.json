@@ -1,0 +1,19 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " #",
+        "H "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:glass"
+        },
+        "H": {
+            "item": "minecraft:glass"
+        }
+    },
+    "result": {
+        "item": "slaviccraft:blood_bottle",
+        "count": 1
+    }
+}

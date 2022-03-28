@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/crop",
+  "textures": {
+    "crop": "slaviccraft:blocks/linen_stage1"
+  }
+}

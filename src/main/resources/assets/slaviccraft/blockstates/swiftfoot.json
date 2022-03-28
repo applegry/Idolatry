@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "slaviccraft:block/swiftfoot_bottom"
+    },
+    "half=upper": {
+      "model": "slaviccraft:block/swiftfoot_top"
+    }
+  }
+}

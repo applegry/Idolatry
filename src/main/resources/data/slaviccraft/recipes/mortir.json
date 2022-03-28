@@ -1,0 +1,16 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "_ _",
+        "___"
+    ],
+    "key": {
+        "_": {
+            "item": "minecraft:stone_slab"
+        }
+    },
+    "result": {
+        "item": "slaviccraft:mortir",
+        "count": 1
+    }
+}

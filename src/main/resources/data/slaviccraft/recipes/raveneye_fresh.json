@@ -1,0 +1,15 @@
+﻿{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "###"
+    ],
+    "key": {
+        "#": {
+            "item": "slaviccraft:raveneye"
+        }
+    },
+    "result": {
+        "item": "slaviccraft:raveneye_fresh",
+        "count": 1
+    }
+}

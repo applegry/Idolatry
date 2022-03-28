@@ -1,0 +1,9 @@
+{
+"parent": "slaviccraft:custom/house_brownie_altar_empty",
+	"textures": {
+		"all":"slaviccraft:blocks/house_brownie_altar",
+		"1": "slaviccraft:blocks/house_brownie_altar",
+		"particle": "slaviccraft:blocks/house_brownie_altar",
+		"missing":"slaviccraft:blocks/house_brownie_altar"
+	}
+}

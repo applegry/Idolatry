@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "slaviccraft:block/thornapples_bottom"
+    },
+    "half=upper": {
+      "model": "slaviccraft:block/thornapples_top"
+    }
+  }
+}

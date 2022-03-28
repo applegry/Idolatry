@@ -1,0 +1,31 @@
+{
+  "variants": {
+    "normal": {
+      "model": "slaviccraft:aspen_log"
+    },
+    "facing=south": {
+      "model": "slaviccraft:aspen_log"
+    },
+    "facing=north": {
+      "model": "slaviccraft:aspen_log"
+    },
+    "facing=east": {
+      "model": "slaviccraft:aspen_log",
+      "x": 90
+    },
+    "facing=west": {
+      "model": "slaviccraft:aspen_log",
+      "x": 90
+    },
+    "facing=up": {
+      "model": "slaviccraft:aspen_log",
+      "x": 90,
+      "y": 90
+    },
+    "facing=down": {
+      "model": "slaviccraft:aspen_log",
+      "x": 90,
+      "y": 90
+    }
+  }
+}
