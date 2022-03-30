@@ -38,7 +38,7 @@ public class DrierBlockContainer extends AbstractContainerMenu {
 
 	
 	public  DrierBlockContainer(int id,Inventory inv) {
-		this(id, inv, new ItemStackHandler(8), BlockPos.ZERO);
+		this(id, inv, new ItemStackHandler(9), BlockPos.ZERO);
 		//this.te = inv.player.level.getBlockEntity(pos);
 		
 	}

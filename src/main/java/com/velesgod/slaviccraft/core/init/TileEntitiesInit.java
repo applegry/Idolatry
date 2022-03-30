@@ -8,6 +8,7 @@ import com.velesgod.slaviccraft.blocks.tile.ElixirCauldronTileEntity;
 import com.velesgod.slaviccraft.blocks.tile.HBATileEntity;
 import com.velesgod.slaviccraft.blocks.tile.PedestalTileEntity;
 import com.velesgod.slaviccraft.blocks.tile.PounderTileEntity;
+import com.velesgod.slaviccraft.blocks.tile.SlavicSackTileEntity;
 
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.entity.BlockEntity;
@@ -62,6 +63,15 @@ public class TileEntitiesInit{
 
 
 
+	  
+	  
+	  
+	  public static final RegistryObject<BlockEntityType<SlavicSackTileEntity>>
+	  SACK_TE = SlavicTileEntities.register("sack", () ->
+	  build(BlockEntityType.Builder.of(SlavicSackTileEntity::new, new Block[] {
+	 
+	  BlockInit.SACK.get() })));
+	  
 
 		  
 		  

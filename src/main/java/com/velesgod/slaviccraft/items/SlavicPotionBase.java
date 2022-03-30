@@ -124,7 +124,7 @@ public class SlavicPotionBase extends Item{
 			      if (effect == null) {
 			         return stack;
 			      } else {
-			    	 
+			    	  
 			         CompoundTag nbt = stack.getOrCreateTag();
 			         nbt.putInt("CustomPotionColor",effect.getEffect().getColor());
 			         ListTag listnbt = nbt.getList("CustomPotionEffects", 9);

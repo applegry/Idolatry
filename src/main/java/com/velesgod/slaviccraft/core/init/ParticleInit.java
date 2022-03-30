@@ -14,6 +14,10 @@ public class ParticleInit {
 	
 	public static final RegistryObject<SimpleParticleType> AMBER_PARTICLE = SlavicParticles.register("amber_particles", () -> new SimpleParticleType(true));
 
+	
+	public static final RegistryObject<SimpleParticleType> GOLDEN_LEAF_PARTICLE = SlavicParticles.register("golden_leaf_particles", () -> new SimpleParticleType(true));
+
+	
 	public static final RegistryObject<SimpleParticleType> IDOL_PARTICLE = SlavicParticles.register("idol_particles", () -> new SimpleParticleType(true));
 
 }

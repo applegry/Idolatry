@@ -17,6 +17,7 @@ import com.velesgod.slaviccraft.items.ChiselItem;
 import com.velesgod.slaviccraft.items.CopperAmuletItem;
 import com.velesgod.slaviccraft.items.Duckweed;
 import com.velesgod.slaviccraft.items.EnchBirchBark;
+import com.velesgod.slaviccraft.items.LeshinAmuletItem;
 import com.velesgod.slaviccraft.items.PowerAmuletItem;
 import com.velesgod.slaviccraft.items.RavenStuff;
 import com.velesgod.slaviccraft.items.RitualDagger;
@@ -77,6 +78,9 @@ public class ItemInit {
 	public static final RegistryObject<PowerAmuletItem> POWER_COPPER_AMULET = SlavicItems.register("power_amulet",
 			() -> new PowerAmuletItem(SlavicArmorMaterial.AMBER, EquipmentSlot.CHEST, (new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
     
+	public static final RegistryObject<LeshinAmuletItem> LESHIN_AMULET = SlavicItems.register("leshin_amulet",
+			() -> new LeshinAmuletItem(SlavicArmorMaterial.AMBER, EquipmentSlot.CHEST, (new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
+    
     
 	
 	
@@ -113,6 +117,10 @@ public class ItemInit {
 	public static final RegistryObject<Item> TURNIP_SEEDS = SlavicItems.register("turnip_seeds",() -> new BaseSeed(BlockInit.TURNIP_BLOCK.get(),3));//#Семена репы//#Turnip Seeds
 	public static final RegistryObject<Item> TURNIP = defineItem("turnip");//#Репа//#Turnip
 	public static final RegistryObject<Item> TURNIP_STEAMED = SlavicItems.register("turnip_steamed", () ->new BaseFood(5,5));//#Пареная репа//#Steamed Turnip
+	
+	public static final RegistryObject<Item> MUSH_BUNDLE = defineItem("mush_bundle");
+	public static final RegistryObject<Item> DRIED_MUSH_BUNDLE = SlavicItems.register("dried_mush_bundle", () ->new BaseFood(5,5));
+	
 	public static final RegistryObject<EnchBirchBark> ENC_BB = 	SlavicItems.register("ench_birch_bark",() -> new EnchBirchBark());//#Зачарованная береста//#Enchancted Bark
 	public static final RegistryObject<Item> EMP_BB = defineItem("empty_birch_bark");//#Очищеная береста//#Empty Birch Bark
 	public static final RegistryObject<Item> DIR_BB =  defineItem("dirty_birch_bark");//#Береста//#Birch Bark

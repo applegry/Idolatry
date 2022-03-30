@@ -1,0 +1,12 @@
+{
+  "parent": "minecraft:block/cube",
+  "textures": {
+    "particle": "slaviccraft:blocks/sack_side",
+    "north": "slaviccraft:blocks/sack_side",
+    "south": "slaviccraft:blocks/sack_side",
+    "east": "slaviccraft:blocks/sack_side",
+    "west": "slaviccraft:blocks/sack_side",
+    "up": "slaviccraft:blocks/sack_top",
+    "down": "slaviccraft:blocks/sack_bottom"
+  }
+}

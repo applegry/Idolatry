@@ -21,7 +21,9 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.Tag;
 import net.minecraft.network.Connection;
+import net.minecraft.network.chat.ChatType;
 import net.minecraft.network.chat.TextComponent;
+import net.minecraft.network.chat.TranslatableComponent;
 import net.minecraft.network.protocol.Packet;
 import net.minecraft.network.protocol.game.ClientGamePacketListener;
 import net.minecraft.network.protocol.game.ClientboundBlockEntityDataPacket;
@@ -31,6 +33,7 @@ import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.BossEvent;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.monster.MagmaCube;
 import net.minecraft.world.entity.monster.Vex;
@@ -45,6 +48,7 @@ import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DoubleBlockHalf;
+import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
 
 public class ClothBlockTileEntity extends BlockEntity{
@@ -52,6 +56,7 @@ public class ClothBlockTileEntity extends BlockEntity{
 
 	public int step = -1;
 	public int progress = 0;
+	public float counter = 0;
 	Player pl;
 	  public ClothBlockTileEntity(BlockPos pos, BlockState state) {
 			super(TileEntitiesInit.CLOTH_TILE.get(), pos, state);
@@ -134,38 +139,170 @@ public class ClothBlockTileEntity extends BlockEntity{
 	}
 		
 	public float MAX = 300;
+	
+	
+	public void sayNoNight() {
+		ServerPlayer s = (ServerPlayer)pl;
+		if(s!=null)s.sendMessage(new TranslatableComponent("rite.slaviccraft.night"), ChatType.GAME_INFO, s.getUUID());
+	}
+	
+	public void sayNoFern() {
+		ServerPlayer s = (ServerPlayer)pl;
+		if(s!=null)s.sendMessage(new TranslatableComponent("rite.slaviccraft.fern"), ChatType.GAME_INFO, s.getUUID());
+	}
+	
 	public void tick() {
 		
+		createSphere(level,worldPosition.below(),1,1);
+		++counter;
+		if(counter>360) counter*=0;
+		if(isSitNow(this.level,worldPosition))
+		if(level.getDayTime()>12000) {
+		if(step==0) {
+			if(getNearFern() == null) {
+				sayNoFern();
+				bossInfo.removeAllPlayers();
+			}
+			else {
+				step = 1;	
 		
-		if(getNearFern() != null) {
-			BlockPos p = getNearFern();
-		
+			}
 		}
 		
-		
-		
-		if(step == 0) { step = 1;	
-		if(getNearFern() != null)
-			pl.lookAt(Anchor.EYES, new Vec3(getNearFern().getX(),getNearFern().getY(),getNearFern().getZ()));
-		}	else
 		if(step == 1 && progress < MAX) {
 			progress++;
 			bossInfo.setProgress((progress/MAX));
-			spawnVex(worldPosition,95);
-		} else
+			spawnVex(worldPosition,98);
+			
+		}
+		
 		if(progress>=MAX && step == 1) {
 			step = -1;
-			progress = 0;
-
-				if(getNearFern() != null) {
-					BlockPos p = getNearFern();
-					level.setBlock(p.above(),BlockInit.BLOOM_FERN.get().defaultBlockState().setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.UPPER), 8);
-					level.setBlock(p,BlockInit.BLOOM_FERN.get().defaultBlockState().setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.LOWER), 8);
-					level.setBlock(p.above(),BlockInit.BLOOM_FERN.get().defaultBlockState().setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.UPPER), 8);
-				}
-			bossInfo.removeAllPlayers();
+			progress = 0;	
+			if(getNearFern() != null) {
+								BlockPos p = getNearFern();
+								level.setBlock(p.above(),BlockInit.BLOOM_FERN.get().defaultBlockState().setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.UPPER), 8);
+								level.setBlock(p,BlockInit.BLOOM_FERN.get().defaultBlockState().setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.LOWER), 8);
+								level.setBlock(p.above(),BlockInit.BLOOM_FERN.get().defaultBlockState().setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.UPPER), 8);
+							}
+						bossInfo.removeAllPlayers();
 		}
+		}else {
+			sayNoNight();
+			bossInfo.removeAllPlayers();	
+		}
+	
+		
+		
+		
+	//	if(
+		checkEntity(this.level,worldPosition);
+		//				) 
+			//			{
+		//	step = -1;
+	//		progress = 0;	
+	//		bossInfo.removeAllPlayers();
+	//	}
+						
+			
+						
+						
+		
+	//	if(step == 0) { 
+	//	if(getNearFern() != null)
+	//		
+	//	}	else
+	//	if(step == 1 && progress < MAX) {
+	//		progress++;
+	///		
+	//		spawnVex(worldPosition,98);
+	//	} else
+	//	if(progress>=MAX && step == 1) {
+	//		step = -1;
+	//		progress = 0;
+//
+	//			if(getNearFern() != null) {
+	//				BlockPos p = getNearFern();
+	//				level.setBlock(p.above(),BlockInit.BLOOM_FERN.get().defaultBlockState().setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.UPPER), 8);
+	//				level.setBlock(p,BlockInit.BLOOM_FERN.get().defaultBlockState().setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.LOWER), 8);
+	//				level.setBlock(p.above(),BlockInit.BLOOM_FERN.get().defaultBlockState().setValue(BlockStateProperties.DOUBLE_BLOCK_HALF, DoubleBlockHalf.UPPER), 8);
+	//			}
+	//		bossInfo.removeAllPlayers();
+	//	}
 	}
+	
+	
+	
+	 private void createSphere(Level world,BlockPos ent,double speed, int size)
+	    {
+	//	 System.out.println(((progress*1.f)/(MAX*1.f)));
+	        double d0 = ent.getX()+0.5;
+	        double d1 = ent.getY()+0.3;
+	        double d2 = ent.getZ()+0.5;
+	      //  Random rand = world.getRandom();
+        double angle = 0;
+         for(float i = 0; i < 180; i += 11.25)
+         {
+               angle = i*2+(counter*1.f);
+        
+           
+               double x1 = size*  Math.cos(angle * Math.PI / 180);
+               double z1 = size* Math.sin(angle * Math.PI / 180);
+               
+               
+               
+             //  if(counter % 3 == 0)
+               world.addParticle(ParticleTypes.REVERSE_PORTAL,d0+x1, d1+1, d2+z1, 0,0 , 0);
+             //  if(counter % 3 == 1)
+             //  world.addParticle(ParticleTypes.WAX_ON,d0+x1, d1+1, d2+z1, 0, -1f, 0);
+              // if(counter % 3 == 2)
+              // world.addParticle(ParticleTypes.SCRAPE,d0+x1, d1+1, d2+z1, 0, -1f, 0);
+         }
+	       
+	    }
+
+
+	public boolean isSitNow(Level level, BlockPos pos) {
+		for(Entity ent: getEnts(level,pos,3)) {
+	
+			if(ent.hasCustomName())
+				if(ent.getCustomName().getContents() == "cloth" && ent.getPassengers().size() > 0) {
+					
+					 return true;
+					}
+				}
+		
+	   return false;
+	}
+	
+	
+
+	public boolean checkEntity(Level level, BlockPos pos) {
+		for(Entity ent: getEnts(level,pos,3)) {
+	
+			if(ent.hasCustomName())
+				if(ent.getCustomName().getContents() == "cloth" && ent.getPassengers().size() == 0) {
+					ent.kill();
+					bossInfo.removeAllPlayers();	
+					 return true;
+					}
+				}
+		
+	   return false;
+	}
+	
+    public static List<Entity> getEnts(Level level,BlockPos pos, double radius) {
+    	
+    	List<Entity> entities = 
+    			level.getEntities(null, new AABB(pos.getX() - radius, 
+    					pos.getY() - radius, 
+    					pos.getZ() - radius, 
+    					pos.getX() + radius, 
+    					pos.getY() + radius, 
+    					pos.getZ() + radius));
+        return entities;
+    }
+	
 	
 	
 	
@@ -199,7 +336,7 @@ public class ClothBlockTileEntity extends BlockEntity{
 		
 
 	
-		mcc.moveTo(pos.getX()+r(4),pos.getY()+3,pos.getZ()+r(4));
+		mcc.moveTo(pos.getX()+r(6),pos.getY(),pos.getZ()+r(6));
 
 		mcc.setCustomNameVisible(true);
 		mcc.setCustomName(new TextComponent("Призрак"));

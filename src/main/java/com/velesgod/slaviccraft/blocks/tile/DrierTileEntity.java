@@ -60,8 +60,12 @@ public class DrierTileEntity extends InventoryBlockEntity{
 		      map.put(  ItemInit.THORNAPPLES_FRESH.get(), ItemInit.THORNAPPLES_DRIED.get());
 		      map.put(  ItemInit.SLEEPGRASS_FRESH.get(), ItemInit.SLEEPGRASS_DRIED.get());
 		      
+		      map.put(  ItemInit.MUSH_BUNDLE.get(), ItemInit.DRIED_MUSH_BUNDLE.get());
+		      
 		      //Vanila
 		      map.put(  Items.ROTTEN_FLESH, Items.LEATHER);
+		      
+		      
 		      
 		      return map;
 		   }
@@ -83,6 +87,7 @@ public class DrierTileEntity extends InventoryBlockEntity{
 		
 				return (item instanceof BaseBundle)||
 						(item == Items.ROTTEN_FLESH)||
+						(item == ItemInit.MUSH_BUNDLE.get())||
 						(Block.byItem(item) instanceof BasePlant)||
 						(Block.byItem(item) instanceof BaseTallPlant);
 			}

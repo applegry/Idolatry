@@ -13,7 +13,7 @@ realmsNotifications:true
 reducedDebugInfo:false
 showSubtitles:false
 touchscreen:false
-fullscreen:true
+fullscreen:false
 bobView:true
 toggleCrouch:false
 toggleSprint:false
@@ -31,7 +31,7 @@ guiScale:0
 particles:1
 maxFps:260
 difficulty:2
-graphicsMode:0
+graphicsMode:1
 ao:2
 prioritizeChunkUpdates:0
 biomeBlendRadius:0

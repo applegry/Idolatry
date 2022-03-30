@@ -113,8 +113,7 @@ public class ClothBlock extends CarpetBlock implements EntityBlock{
 	@Override
     public <T extends BlockEntity> BlockEntityTicker<T> getTicker(Level level, BlockState state,
             BlockEntityType<T> beType) {
-    //    return level.isClientSide ? null
-      //          : 
+ 
          return       	(level0, pos, state0, blockEntity) -> ((ClothBlockTileEntity) blockEntity).tick();
     }
 

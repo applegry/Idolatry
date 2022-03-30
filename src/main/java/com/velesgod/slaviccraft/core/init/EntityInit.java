@@ -19,7 +19,7 @@ public class EntityInit {
 	
 	
 	public static final RegistryObject<EntityType<SlavicGhost>> SLAVIC_GHOST = buildEntity(
-			SlavicGhost::new, SlavicGhost.class, .7F, 1.3F);
+			SlavicGhost::new, SlavicGhost.class, .5F, 1.2F);
 	
 
 

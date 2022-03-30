@@ -14,6 +14,7 @@ import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.PathfinderMob;
+import net.minecraft.world.entity.ai.attributes.Attribute;
 import net.minecraft.world.entity.ai.attributes.AttributeSupplier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.ai.control.MoveControl;
@@ -23,7 +24,9 @@ import net.minecraft.world.entity.ai.goal.LookAtPlayerGoal;
 import net.minecraft.world.entity.ai.goal.target.NearestAttackableTargetGoal;
 import net.minecraft.world.entity.ai.goal.target.TargetGoal;
 import net.minecraft.world.entity.ai.targeting.TargetingConditions;
+import net.minecraft.world.entity.boss.enderdragon.EnderDragon;
 import net.minecraft.world.entity.monster.Monster;
+import net.minecraft.world.entity.monster.Phantom;
 import net.minecraft.world.entity.monster.Vex;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
@@ -43,8 +46,19 @@ public class SlavicGhost extends Monster implements IAnimatable, IAnimationTicka
 	private AnimationFactory factory = new AnimationFactory(this);
 
 	private <E extends IAnimatable> PlayState predicate(AnimationEvent<E> event) {
-		event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.wraith.idle", true));
-		return PlayState.CONTINUE;
+		
+	
+		if (this.tickCount < 1.8*20) {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.wraith.spawn", false));
+			return PlayState.CONTINUE;
+		}
+		
+		if (this.tickCount > 1.8*20) {
+			event.getController().setAnimation(new AnimationBuilder().addAnimation("animation.wraith.idle", true));
+			return PlayState.CONTINUE;
+		}
+		
+		return PlayState.STOP;
 	}
 
 	public SlavicGhost(EntityType<? extends Monster> type, Level worldIn) {
@@ -52,6 +66,7 @@ public class SlavicGhost extends Monster implements IAnimatable, IAnimationTicka
 		this.noCulling = true;
 		  this.moveControl = new WraithMoveControl(this);
 		   this.xpReward = 1;
+		   
 	}
 
 
@@ -59,15 +74,14 @@ public class SlavicGhost extends Monster implements IAnimatable, IAnimationTicka
 	   public static AttributeSupplier.Builder createMobAttributes() {
 	      return Monster.createMobAttributes()
 	    		  .add(Attributes.MAX_HEALTH, 10.0D)
-	    		
+	    		  .add(Attributes.KNOCKBACK_RESISTANCE,10.0)
 	    		  .add(Attributes.ATTACK_DAMAGE, 4.0D);
 	   }
 	
+	   
 	@Override
 	public void registerControllers(AnimationData data) {
-		AnimationController<SlavicGhost> controller = new AnimationController<>(this, "controller", 0, this::predicate);
-		controller.registerCustomInstructionListener(this::customListener);
-		data.addAnimationController(controller);
+		data.addAnimationController(new AnimationController<>(this, "controller", 0, this::predicate));
 	}
 
 	@SuppressWarnings("resource")
@@ -188,10 +202,10 @@ public class SlavicGhost extends Monster implements IAnimatable, IAnimationTicka
 	               double d0 = SlavicGhost.this.distanceToSqr(livingentity);
 	               if (d0 < 9.0D) {
 	                  Vec3 vec3 = livingentity.getEyePosition();
-	                  SlavicGhost.this.moveControl.setWantedPosition(vec3.x, vec3.y, vec3.z, 1.0D);
+	                  SlavicGhost.this.moveControl.setWantedPosition(vec3.x, vec3.y, vec3.z, 3.0D);
 	               }
 	            }
-
+	          
 	         }
 	      }
 	   }
@@ -205,12 +219,14 @@ public class SlavicGhost extends Monster implements IAnimatable, IAnimationTicka
 		      }
 
 		      public void tick() {
+		    	  if(SlavicGhost.this.tickCount > (1.8f*20)) {
 		         if (this.operation == MoveControl.Operation.MOVE_TO) {
-		            Vec3 vec3 = new Vec3(this.wantedX - SlavicGhost.this.getX(), this.wantedY - SlavicGhost.this.getY(), this.wantedZ - SlavicGhost.this.getZ());
+		            Vec3 vec3 = new Vec3(this.wantedX - SlavicGhost.this.getX(), 
+		            		this.wantedY - SlavicGhost.this.getY()-1, this.wantedZ - SlavicGhost.this.getZ());
 		            double d0 = vec3.length();
 		            if (d0 < SlavicGhost.this.getBoundingBox().getSize()) {
 		               this.operation = MoveControl.Operation.WAIT;
-		               SlavicGhost.this.setDeltaMovement(SlavicGhost.this.getDeltaMovement().scale(0.5D));
+		               SlavicGhost.this.setDeltaMovement(SlavicGhost.this.getDeltaMovement().scale(0.1));
 		            } else {
 		            	SlavicGhost.this.setDeltaMovement(SlavicGhost.this.getDeltaMovement().add(vec3.scale(this.speedModifier * 0.01D / d0)));
 		               if (SlavicGhost.this.getTarget() == null) {
@@ -226,6 +242,9 @@ public class SlavicGhost extends Monster implements IAnimatable, IAnimationTicka
 		            }
 
 		         }
+		    	  } else {
+		    		  SlavicGhost.this.setDeltaMovement(0,0.04,0);
+		    	  }
 		      }
 		   }
 	   

@@ -11,33 +11,46 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.NonNullList;
 
 import com.mojang.blaze3d.platform.ScreenManager;
+import com.mojang.brigadier.exceptions.CommandSyntaxException;
 import com.velesgod.slaviccraft.api.IdolUtils;
 import com.velesgod.slaviccraft.blockentityrenderer.DrierTileEntityRenderer;
 import com.velesgod.slaviccraft.blockentityrenderer.PedestalTileEntityRenderer;
 
 import net.minecraft.nbt.CompoundTag;
+import net.minecraft.nbt.ListTag;
+import net.minecraft.nbt.Tag;
+import net.minecraft.nbt.TagParser;
 import net.minecraft.network.chat.TextComponent;
 import net.minecraft.network.chat.TranslatableComponent;
+import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffect;
 import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
+import net.minecraft.world.entity.animal.Chicken;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.alchemy.PotionUtils;
+import net.minecraft.world.level.GameRules.Category;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.phys.AABB;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.ClientRegistry;
@@ -48,9 +61,13 @@ import net.minecraftforge.client.event.ParticleFactoryRegisterEvent;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.living.LivingDamageEvent;
+import net.minecraftforge.event.entity.living.LivingDeathEvent;
 import net.minecraftforge.event.entity.living.LivingFallEvent;
+import net.minecraftforge.event.entity.living.LivingHurtEvent;
 import net.minecraftforge.event.entity.player.AttackEntityEvent;
 import net.minecraftforge.event.entity.player.ItemTooltipEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
@@ -65,6 +82,7 @@ import net.minecraftforge.registries.RegistryObject;
 import software.bernie.geckolib3.GeckoLib;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -82,7 +100,9 @@ import com.velesgod.slaviccraft.core.init.SoundInit;
 import com.velesgod.slaviccraft.core.init.TileEntitiesInit;
 import com.velesgod.slaviccraft.gui.DrierBlockGui;
 import com.velesgod.slaviccraft.gui.ElixirCauldronGui;
+import com.velesgod.slaviccraft.gui.SlavicSackGui;
 import com.velesgod.slaviccraft.particles.ParticleTypeAmber;
+import com.velesgod.slaviccraft.particles.ParticleTypeGoldenLeaf;
 import com.velesgod.slaviccraft.particles.ParticleTypeIdol;
 import com.velesgod.slaviccraft.particles.ParticleTypeRaven;
 import com.velesgod.slaviccraft.world.SlavicOreGeneration;
@@ -129,7 +149,7 @@ public class SlavicCraftMod {
 			Minecraft.getInstance().particleEngine.register(ParticleInit.RAVEN_PARTICLE.get(),ParticleTypeRaven.Provider::new);
 			Minecraft.getInstance().particleEngine.register(ParticleInit.AMBER_PARTICLE.get(),ParticleTypeAmber.Provider::new);
 			Minecraft.getInstance().particleEngine.register(ParticleInit.IDOL_PARTICLE.get(),ParticleTypeIdol.Provider::new);
-
+			Minecraft.getInstance().particleEngine.register(ParticleInit.GOLDEN_LEAF_PARTICLE.get(),ParticleTypeGoldenLeaf.Provider::new);
 		}
 	
 	@SubscribeEvent
@@ -174,15 +194,102 @@ public class SlavicCraftMod {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.LINEN_BLOCK.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.TURNIP_BLOCK.get(), RenderType.cutout());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.HBA_ALTAR.get(), RenderType.cutout());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.GOLDEN_LEAVES.get(), RenderType.translucentMovingBlock());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.DRIER.get(), RenderType.cutoutMipped());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.DEEPROOT.get(), RenderType.cutoutMipped());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.DUCKWEED.get(), RenderType.cutoutMipped());
 		
 			MenuScreens.register(ContainerInit.DRIER.get(),DrierBlockGui::new);
 			MenuScreens.register(ContainerInit.CAULDRON_CONTANIER.get(),ElixirCauldronGui::new);
+			MenuScreens.register(ContainerInit.SACK.get(),SlavicSackGui::new);
 		
 		  }
 
+	 
+	 
+	public boolean isAmulet(Entity e) {
+		for(ItemStack i:((Player)e).getArmorSlots()) {
+			if(i.getItem() == ItemInit.LESHIN_AMULET.get()) return true; 
+		}
+		return false;
+	}
+	 
+     @SubscribeEvent
+	public void onLivingDeath(LivingDeathEvent event){
+		Entity e = event.getEntity();
+		
+		if (e instanceof Player) 
+		if(isAmulet(e)){
+			Level l  = e.level;
+			Player p = ((Player)e);
+			BlockPos respos = new BlockPos(0,0,0);
+			
+			Chicken ent = new Chicken(EntityType.CHICKEN, l);
+			ent.setInvulnerable(true);
+			
+		//	ent.setInvisible(true);
+			ent.setAge(0);
+			ent.setNoAi(true);
+			ent.setBoundingBox(new AABB(0,0,0,0,0,0));
+			ent.setSilent(true);
+			ent.setNoGravity(true);
+			ent.setCustomNameVisible(false);
+			ent.setCustomName(new TextComponent("__inv"));
+			
+
+			ListTag list = new ListTag();
+			p.getInventory().save(list);
+			
+			ItemStack saver = new ItemStack(Items.EGG);
+			CompoundTag tag = new CompoundTag();
+			tag = saver.getOrCreateTag();
+			tag.putInt("size", list.size());
+			tag.put("inv",list);
+			saver.setTag(tag);
+			ent.setItemInHand(InteractionHand.MAIN_HAND, saver);
+			System.out.println(saver.getTag());
+			
+			
+			ent.moveTo(respos.getX(),respos.getY(), respos.getZ());
+			l.addFreshEntity(ent);
+			
+			
+		}
+	}
+     
+
+     
+     @SubscribeEvent
+     public void onPlayerRespawn(PlayerEvent.PlayerRespawnEvent event) {
+	  for(Entity e: event.getPlayer().level.getEntities(
+			   new Chicken(EntityType.CHICKEN,event.getPlayer().level)
+			   , new AABB(new BlockPos(-1,-1,-1),new BlockPos(1,1,1))) ) {
+		  if(e.hasCustomName())
+			  if(e.getCustomName().getContents() == "__inv")
+			  {
+				  ListTag list =new ListTag();
+				  
+				  CompoundTag tag  = new CompoundTag();
+				  tag = ((Chicken)e).getItemInHand(InteractionHand.MAIN_HAND).getTag();
+				  int size = tag.getInt("size");
+				  list = (ListTag) tag.get("inv");
+				//  list = 
+				  System.out.println(list);
+				  event.getPlayer().getInventory().load(list);
+				  e.kill();
+			  }
+				 
+	
+	   }
+     }
+	 
+   public BlockPos getRespawn(Player player) {
+	   return ((ServerPlayer)player).getRespawnPosition();
+   }
+     
+
+     
+   
 	 
 		@SubscribeEvent
 		public void biomeLoadingEffect(final BiomeLoadingEvent event) {
@@ -310,8 +417,9 @@ public class SlavicCraftMod {
 	 
 		@SubscribeEvent
 		public void tick(final TickEvent.PlayerTickEvent ev) {
-		//	LOGGER.info("test\n");
+		
 			Player player = ev.player;
+		//	System.out.println(player.getBedOrientation());
 			Level world = ev.player.level;
 			if(player.hasEffect(EffectInit.LIGHT_FEET.get()) && world.getBlockState(new BlockPos(player.getPosition(1))).getBlock() == Blocks.WATER && 
 				world.getBlockState(new BlockPos(player.getPosition(1)).above()).getBlock() == Blocks.AIR &&
@@ -325,6 +433,9 @@ public class SlavicCraftMod {
 		}
 	 
 
+		
+		
+		
 }
 
 

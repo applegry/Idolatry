@@ -3,6 +3,7 @@ package com.velesgod.slaviccraft.core.init;
 import com.velesgod.slaviccraft.SlavicCraftMod;
 import com.velesgod.slaviccraft.contaniers.DrierBlockContainer;
 import com.velesgod.slaviccraft.contaniers.ElixirCauldronContanier;
+import com.velesgod.slaviccraft.contaniers.SlavicSackContainer;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.inventory.MenuType;
@@ -19,30 +20,14 @@ public class ContainerInit{
 	= DeferredRegister.create(ForgeRegistries.CONTAINERS,SlavicCraftMod.MOD_ID);
 	
 	
-//	public static final RegistryObject<ContainerType<ElixirCauldronContanier>>  CAULDRON_CONTANIER =
-//		 SlavicContaniers.register("elixir_cauldron_container",
-//				 () -> IForgeContainerType.create( (windowId,inv,data)-> {
-//					 BlockPos pos = data.readBlockPos();
-//					 World world = inv.player.getEntity().level;
-//					 return new ElixirCauldronContanier(windowId,world,pos,inv);
-//					 
-//				 }));
-	
-//	public static final RegistryObject<MenuType<DrierBlockContainer>>  DRIER =
-//			 SlavicContaniers.register("dryer",
-//					 () -> IForgeMenuType.create( (windowId,inv,data)-> {
-//						 BlockPos pos = data.readBlockPos();
-//						 Level world = inv.player.getLevel();
-//						 return new DrierBlockContainer(windowId,world,pos,inv);
-//						 
-//					 }));
-	
-	
 	   public static final RegistryObject<MenuType<DrierBlockContainer>> DRIER = SlavicContaniers
 	            .register("dryer", () -> new MenuType<>(DrierBlockContainer::new));
 	
 	   public static final RegistryObject<MenuType<ElixirCauldronContanier>> CAULDRON_CONTANIER = SlavicContaniers
 	            .register("elixir_cauldron_container", () -> new MenuType<>(ElixirCauldronContanier::new));
+	
+	   public static final RegistryObject<MenuType<SlavicSackContainer>> SACK = SlavicContaniers
+	            .register("sack_container", () -> new MenuType<>(SlavicSackContainer::new));
 	
 	
 	public static void register(IEventBus eventBus) {

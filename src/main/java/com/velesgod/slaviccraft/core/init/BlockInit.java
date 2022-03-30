@@ -8,14 +8,17 @@ import com.velesgod.slaviccraft.blocks.CutOakIdol;
 import com.velesgod.slaviccraft.blocks.DrierBlock;
 import com.velesgod.slaviccraft.blocks.DuckweedBlock;
 import com.velesgod.slaviccraft.blocks.ElixirCauldron;
+import com.velesgod.slaviccraft.blocks.GoldenLeaves;
 import com.velesgod.slaviccraft.blocks.HouseBrownieAltar;
 import com.velesgod.slaviccraft.blocks.LinenBlock;
 import com.velesgod.slaviccraft.blocks.LivingWood;
 import com.velesgod.slaviccraft.blocks.PedestalBlock;
 import com.velesgod.slaviccraft.blocks.PounderBlock;
+import com.velesgod.slaviccraft.blocks.SlavicSack;
 import com.velesgod.slaviccraft.blocks.TurnipBlock;
 import com.velesgod.slaviccraft.blocks.herbs.BasePlant;
 import com.velesgod.slaviccraft.blocks.herbs.BaseTallPlant;
+import com.velesgod.slaviccraft.blocks.tile.SlavicSackTileEntity;
 
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.level.block.Block;
@@ -45,8 +48,12 @@ public class BlockInit {
 	  
       public static final RegistryObject<Block> ELIXIR_CAULDRON =SlavicBlocks.register("elixir_cauldron",() -> new ElixirCauldron());
 	 
+      public static final RegistryObject<SlavicSack> SACK = SlavicBlocks.register("sack", () -> new SlavicSack());
+      
       public static final RegistryObject<Block> CLOTH = SlavicBlocks.register("slaviccloth", () -> new ClothBlock());
 	
+      
+
 	  public static final RegistryObject<Block> LIVING_STONE_BLOCK = SlavicBlocks.register("living_stone_block",() -> new Block(Properties.of(Material.HEAVY_METAL).strength(4f,4f)));
 	  public static final RegistryObject<Block> DEAD_STONE_BLOCK = SlavicBlocks.register("dead_stone_block",() -> new Block(Properties.of(Material.HEAVY_METAL).strength(4f,4f)));
 	  public static final RegistryObject<Block> AMBER_ORE =SlavicBlocks.register("amber_ore",() -> new Block(Properties.of(Material.STONE).strength(3f,3f)));
@@ -75,7 +82,7 @@ public class BlockInit {
 	  public static final RegistryObject<Block> CUT_CRIMSON_IDOL =SlavicBlocks.register("cut_crimson_idol",() -> new CutOakIdol());
 	 
 
-	
+      public static final RegistryObject<Block> GOLDEN_LEAVES = SlavicBlocks.register("golden_leaves",() -> new GoldenLeaves());
 	  public static final RegistryObject<Block> LIVING_WOOD = SlavicBlocks.register("living_wood",() -> new LivingWood());
 	  
 	

@@ -138,5 +138,8 @@
 "effect.slaviccraft.poison_resist":"Posion Resistance",
 
 "tooltip.slaviccraft.balm":"Oiled with Balm",
-"tooltip.slaviccraft.balm_of":"Blows left"
+"tooltip.slaviccraft.balm_of":"Blows left",
+
+"rite.slaviccraft.night":"The ritual must be performed at night",
+"rite.slaviccraft.fern":"There is no fern growing nearby"
 }
