@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.Direction;
 import net.minecraft.core.NonNullList;
 
 import com.mojang.blaze3d.platform.ScreenManager;
@@ -36,7 +37,9 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Chicken;
+import net.minecraft.world.entity.animal.SnowGolem;
 import net.minecraft.world.entity.item.ItemEntity;
+import net.minecraft.world.entity.monster.Silverfish;
 import net.minecraft.world.entity.player.Inventory;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.AxeItem;
@@ -49,7 +52,10 @@ import net.minecraft.world.level.GameRules.Category;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.PowderSnowBlock;
 import net.minecraft.world.level.block.entity.BlockEntityType;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
+import net.minecraft.world.level.block.state.properties.Tilt;
 import net.minecraft.world.phys.AABB;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.api.distmarker.Dist;
@@ -98,6 +104,7 @@ import com.velesgod.slaviccraft.core.init.ItemInit;
 import com.velesgod.slaviccraft.core.init.ParticleInit;
 import com.velesgod.slaviccraft.core.init.SoundInit;
 import com.velesgod.slaviccraft.core.init.TileEntitiesInit;
+import com.velesgod.slaviccraft.entity.SlavicLeshin;
 import com.velesgod.slaviccraft.gui.DrierBlockGui;
 import com.velesgod.slaviccraft.gui.ElixirCauldronGui;
 import com.velesgod.slaviccraft.gui.SlavicSackGui;
@@ -107,7 +114,7 @@ import com.velesgod.slaviccraft.particles.ParticleTypeIdol;
 import com.velesgod.slaviccraft.particles.ParticleTypeRaven;
 import com.velesgod.slaviccraft.world.SlavicOreGeneration;
 
-
+//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
 @Mod("slaviccraft")
 @Mod.EventBusSubscriber(modid = SlavicCraftMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 
@@ -198,6 +205,7 @@ public class SlavicCraftMod {
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.DRIER.get(), RenderType.cutoutMipped());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.DEEPROOT.get(), RenderType.cutoutMipped());
 			ItemBlockRenderTypes.setRenderLayer(BlockInit.DUCKWEED.get(), RenderType.cutoutMipped());
+			ItemBlockRenderTypes.setRenderLayer(BlockInit.LESHIN_HEAD.get(), RenderType.cutoutMipped());
 		
 			MenuScreens.register(ContainerInit.DRIER.get(),DrierBlockGui::new);
 			MenuScreens.register(ContainerInit.CAULDRON_CONTANIER.get(),ElixirCauldronGui::new);
@@ -377,6 +385,22 @@ public class SlavicCraftMod {
 			}
 		}
 
+		
+
+		
+		@SubscribeEvent
+		public void onEntityAttack(final net.minecraftforge.event.entity.living.LivingHurtEvent ev) {
+			if(!ev.getEntity().level.isClientSide())
+			if(ev.getSource().getDirectEntity() instanceof SlavicLeshin) {
+				SlavicLeshin lesh = (SlavicLeshin)ev.getSource().getDirectEntity();
+				lesh.addTag("a");
+			}
+		}
+	
+		
+		
+	
+		
 		@SubscribeEvent
 		public void onEntityAttacked(final net.minecraftforge.event.entity.living.LivingAttackEvent ev) {
 			if(ev.getEntity() instanceof Player) {
@@ -385,6 +409,9 @@ public class SlavicCraftMod {
 					if(ev.getSource() == DamageSource.LAVA || ev.getSource() == DamageSource.IN_FIRE || ev.getSource() == DamageSource.ON_FIRE 
 					||ev.getSource() == DamageSource.HOT_FLOOR) ev.setCanceled(true);
 			}
+			
+	
+			
 		}
 		
 		@SubscribeEvent
@@ -421,15 +448,42 @@ public class SlavicCraftMod {
 			Player player = ev.player;
 		//	System.out.println(player.getBedOrientation());
 			Level world = ev.player.level;
-			if(player.hasEffect(EffectInit.LIGHT_FEET.get()) && world.getBlockState(new BlockPos(player.getPosition(1))).getBlock() == Blocks.WATER && 
-				world.getBlockState(new BlockPos(player.getPosition(1)).above()).getBlock() == Blocks.AIR &&
-					!player.isShiftKeyDown()){
-				double dy = player.getDeltaMovement().y() > 0 ? player.getDeltaMovement().y():0;
-				player.setDeltaMovement(player.getDeltaMovement().x(),dy,player.getDeltaMovement().z());
-				player.setOnGround(true);
-				player.bob = 0.1f;
-			
+			if(player.hasEffect(EffectInit.LIGHT_FEET.get()) && !player.isShiftKeyDown()) {
+				player.setSilent(true);
+				if(world.getBlockState(new BlockPos(player.getPosition(1))).getBlock() == Blocks.WATER && 
+						world.getBlockState(new BlockPos(player.getPosition(1)).above()).getBlock() == Blocks.AIR)
+				{
+				
+					double dy = player.getDeltaMovement().y() > 0 ? player.getDeltaMovement().y():0;
+					player.setDeltaMovement(player.getDeltaMovement().x(),dy,player.getDeltaMovement().z());
+					player.setOnGround(true);
+					player.bob = 0.1f;
+				}
+				if(world.getBlockState(new BlockPos(player.getPosition(1))).getBlock() == Blocks.POWDER_SNOW && 
+						world.getBlockState(new BlockPos(player.getPosition(1)).above()).getBlock() == Blocks.AIR)
+				{
+					//player.addTag("powder_snow_walkable_mobs");
+					player.setIsInPowderSnow(false);// = false;
+					player.setSpeed(50.2f);
+					double dy = player.getDeltaMovement().y() > 0.1 ? player.getDeltaMovement().y():0;
+					player.setDeltaMovement(player.getDeltaMovement().x(),dy,player.getDeltaMovement().z());
+					player.setOnGround(true);
+				
+					player.bob = 0.1f;
+				}
+				//if(world.getBlockState(new BlockPos(player.getPosition(1))).getBlock() == Blocks.BIG_DRIPLEAF)
+				{
+					
+					for(BlockPos pos: BlockPos.spiralAround(new BlockPos(player.getPosition(1)), 0, Direction.EAST,  Direction.NORTH)) {
+						world.setBlock(pos, Blocks.SAND.defaultBlockState(), 3);
+					}
+					
+				
+					
+					
+				}
 			}
+		
 		}
 	 
 

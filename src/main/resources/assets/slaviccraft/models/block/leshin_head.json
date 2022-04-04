@@ -1,0 +1,7 @@
+{
+"parent": "slaviccraft:custom/leshin",
+	"textures": {
+		"0": "slaviccraft:entity/leshiy",
+		"particle": "slaviccraft:entity/leshiy"
+	}
+}

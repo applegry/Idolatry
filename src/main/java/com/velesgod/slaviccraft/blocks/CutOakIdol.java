@@ -46,7 +46,7 @@ public class CutOakIdol extends Block{
 	public CutOakIdol() {
 		
 		super(Properties.of(Material.WOOD).strength(2.0F).sound(SoundType.WOOD));
-
+		this.registerDefaultState((BlockState)((BlockState)((BlockState)this.stateDefinition.any()).setValue(LIT,false)));
 	}
 	
 	

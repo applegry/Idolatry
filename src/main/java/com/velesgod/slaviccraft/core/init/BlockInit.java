@@ -10,6 +10,7 @@ import com.velesgod.slaviccraft.blocks.DuckweedBlock;
 import com.velesgod.slaviccraft.blocks.ElixirCauldron;
 import com.velesgod.slaviccraft.blocks.GoldenLeaves;
 import com.velesgod.slaviccraft.blocks.HouseBrownieAltar;
+import com.velesgod.slaviccraft.blocks.LeshinHead;
 import com.velesgod.slaviccraft.blocks.LinenBlock;
 import com.velesgod.slaviccraft.blocks.LivingWood;
 import com.velesgod.slaviccraft.blocks.PedestalBlock;
@@ -51,7 +52,8 @@ public class BlockInit {
       public static final RegistryObject<SlavicSack> SACK = SlavicBlocks.register("sack", () -> new SlavicSack());
       
       public static final RegistryObject<Block> CLOTH = SlavicBlocks.register("slaviccloth", () -> new ClothBlock());
-	
+      public static final RegistryObject<Block> LESHIN_HEAD = SlavicBlocks.register("leshin_head", () -> new LeshinHead());
+  	
       
 
 	  public static final RegistryObject<Block> LIVING_STONE_BLOCK = SlavicBlocks.register("living_stone_block",() -> new Block(Properties.of(Material.HEAVY_METAL).strength(4f,4f)));

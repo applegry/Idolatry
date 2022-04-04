@@ -18,6 +18,7 @@ import com.velesgod.slaviccraft.items.CopperAmuletItem;
 import com.velesgod.slaviccraft.items.Duckweed;
 import com.velesgod.slaviccraft.items.EnchBirchBark;
 import com.velesgod.slaviccraft.items.LeshinAmuletItem;
+import com.velesgod.slaviccraft.items.LinenClothes;
 import com.velesgod.slaviccraft.items.PowerAmuletItem;
 import com.velesgod.slaviccraft.items.RavenStuff;
 import com.velesgod.slaviccraft.items.RitualDagger;
@@ -25,6 +26,7 @@ import com.velesgod.slaviccraft.items.Sickle;
 import com.velesgod.slaviccraft.items.SlavicArmorMaterial;
 //import com.velesgod.slaviccraft.items.SlavicPotionBase;
 import com.velesgod.slaviccraft.items.SlavicPotionBase;
+import com.velesgod.slaviccraft.items.WreathBase;
 
 import net.minecraft.world.entity.EquipmentSlot;
 import net.minecraft.world.item.ArmorItem;
@@ -81,15 +83,14 @@ public class ItemInit {
 	public static final RegistryObject<LeshinAmuletItem> LESHIN_AMULET = SlavicItems.register("leshin_amulet",
 			() -> new LeshinAmuletItem(SlavicArmorMaterial.AMBER, EquipmentSlot.CHEST, (new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
     
-    
+
 	
-	
-    public static final RegistryObject<ArmorItem> LINEN_TUNIC = SlavicItems.register("linen_tunic", () ->
-	new ArmorItem(SlavicArmorMaterial.LINEN_CLOTHES, EquipmentSlot.CHEST, (new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
+    public static final RegistryObject<LinenClothes> LINEN_TUNIC = SlavicItems.register("linen_tunic", () ->
+	new LinenClothes(SlavicArmorMaterial.LINEN_CLOTHES, EquipmentSlot.CHEST, (new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
     
     
-    public static final RegistryObject<ArmorItem> LINEN_PANTS = SlavicItems.register("linen_pants", () ->
-	new ArmorItem(SlavicArmorMaterial.LINEN_CLOTHES, EquipmentSlot.LEGS, (new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
+    public static final RegistryObject<LinenClothes> LINEN_PANTS = SlavicItems.register("linen_pants", () ->
+	new LinenClothes(SlavicArmorMaterial.LINEN_CLOTHES, EquipmentSlot.LEGS, (new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
     
     
 
@@ -129,26 +130,33 @@ public class ItemInit {
 	public static final RegistryObject<SlavicPotionBase> ELIXIR =  SlavicItems.register("elixir", () ->new SlavicPotionBase((new Item.Properties()).rarity(Rarity.EPIC).stacksTo(1).tab(SlavicCraftTab.SlavicGroup))); //#Элексир//#Elixir
 
 	//-----Dried 
-	public static final RegistryObject<BaseBundle> FIREWHIP_DRIED = defineBundle("firewhip_dried");//#Сушеный Жар-Цвет//#Dried Firewhip
-	public static final RegistryObject<BaseBundle> HELLEBORE_DRIED = defineBundle("hellebore_dried");//#Сушеный Морозник//#Dried Hellebore
-	public static final RegistryObject<BaseBundle> SLEEPGRASS_DRIED = defineBundle("sleepgrass_dried");//#Сушеная Сон-трава//#Dried Sleepgrass
-	public static final RegistryObject<BaseBundle> SWIFTFOOT_DRIED = defineBundle("swiftfoot_dried");//#Сушеный Быстроног//#Dried Swiftfoot
-	public static final RegistryObject<BaseBundle> SWORDBLADE_DRIED = defineBundle("swordblade_dried");//#Сушеный Меч-Колос//#Dried Swordblade
-	public static final RegistryObject<BaseBundle> THORNAPPLES_DRIED = defineBundle("thornapples_dried");//#Сушеный Чертополох//#Dried Thornapple
-	public static final RegistryObject<BaseBundle> RAVENEYE_DRIED = defineBundle("paris_dried");//#Сушеный Вороний глаз//#Dried Paris
-	public static final RegistryObject<BaseBundle> HEMLOCK_DRIED = defineBundle("hemlock_dried");//#Сушеный Болиголов//#Dried Hemlock
-	public static final RegistryObject<BaseBundle> HENBANE_DRIED = defineBundle("henbane_dried");//#Сушеная Белена//#Dried Henbane
-	public static final RegistryObject<BaseBundle> IMMORTELLE_DRIED = defineBundle("immortelle_dried");//#Сушеный Сухоцвет//#Dried Immortelle
-	public static final RegistryObject<BaseBundle> CHRYSANTHS_DRIED = defineBundle("crysanths_dried");//#Сушеный Тысячелистник//#Dried Crysanths
-	public static final RegistryObject<BaseBundle> WILDROSEMARY_DRIED = defineBundle("wildrosemary_dried");//#Сушеный Багульник//#Dried Wild Rosemary
+	public static final RegistryObject<BaseBundle> FIREWHIP_DRIED = defineBundle("firewhip_bundle");//#Сушеный Жар-Цвет//#Dried Firewhip
+	public static final RegistryObject<BaseBundle> HELLEBORE_DRIED = defineBundle("hellebore_bundle");//#Сушеный Морозник//#Dried Hellebore
+	public static final RegistryObject<BaseBundle> SLEEPGRASS_DRIED = defineBundle("sleepgrass_bundle");//#Сушеная Сон-трава//#Dried Sleepgrass
+	public static final RegistryObject<BaseBundle> SWIFTFOOT_DRIED = defineBundle("swiftfoot_bundle");//#Сушеный Быстроног//#Dried Swiftfoot
+	public static final RegistryObject<BaseBundle> SWORDBLADE_DRIED = defineBundle("swordblade_bundle");//#Сушеный Меч-Колос//#Dried Swordblade
+	public static final RegistryObject<BaseBundle> THORNAPPLES_DRIED = defineBundle("thornapples_bundle");//#Сушеный Чертополох//#Dried Thornapple
+	public static final RegistryObject<BaseBundle> RAVENEYE_DRIED = defineBundle("paris_bundle");//#Сушеный Вороний глаз//#Dried Paris
+	public static final RegistryObject<BaseBundle> HEMLOCK_DRIED = defineBundle("hemlock_bundle");//#Сушеный Болиголов//#Dried Hemlock
+	public static final RegistryObject<BaseBundle> HENBANE_DRIED = defineBundle("henbane_bundle");//#Сушеная Белена//#Dried Henbane
+	public static final RegistryObject<BaseBundle> IMMORTELLE_DRIED = defineBundle("immortelle_bundle");//#Сушеный Сухоцвет//#Dried Immortelle
+	public static final RegistryObject<BaseBundle> CHRYSANTHS_DRIED = defineBundle("crysanth_bundle");//#Сушеный Тысячелистник//#Dried Crysanths
+	public static final RegistryObject<BaseBundle> WILDROSEMARY_DRIED = defineBundle("wildrosemary_bundle");//#Сушеный Багульник//#Dried Wild Rosemary
 	
 	
 	//--Others
-	public static final RegistryObject<BaseBundle> ARTEMISISA_DRIED = defineBundle("artemisia_dried");//#Сушеный Багульник//#Dried Wild Rosemary
-	public static final RegistryObject<BaseBundle> HEATHER_DRIED = defineBundle("heather_dried");//#Сушеный Багульник//#Dried Wild Rosemary
-	public static final RegistryObject<BaseBundle> THISTLES_DRIED = defineBundle("thistles_dried");//#Сушеный Багульник//#Dried Wild Rosemary
-	public static final RegistryObject<BaseBundle> CRANESBILL_DRIED = defineBundle("cranesbill_dried");//#Сушеный Багульник//#Dried Wild Rosemary
-
+	public static final RegistryObject<BaseBundle> ARTEMISISA_DRIED = defineBundle("artemisia_bundle");//#Сушеный Багульник//#Dried Wild Rosemary
+	public static final RegistryObject<BaseBundle> HEATHER_DRIED = defineBundle("heather_bundle");//#Сушеный Багульник//#Dried Wild Rosemary
+	public static final RegistryObject<BaseBundle> THISTLES_DRIED = defineBundle("thistles_bundle");//#Сушеный Багульник//#Dried Wild Rosemary
+	public static final RegistryObject<BaseBundle> CRANESBILL_DRIED = defineBundle("cranesbill_bundle");//#Сушеный Багульник//#Dried Wild Rosemary
+	public static final RegistryObject<BaseBundle> LOVAGE_DRIED = defineBundle("lovage_bundle");//#Сушеный Багульник//#Dried Wild Rosemary
+	public static final RegistryObject<BaseBundle> KELP_DRIED = defineBundle("dried_kelp_bundle");//#Сушеный Багульник//#Dried Wild Rosemary
+	public static final RegistryObject<BaseBundle> DEEPROOT_DRIED = defineBundle("deeproot_bundle");//#Сушеный Багульник//#Dried Wild Rosemary
+	public static final RegistryObject<BaseBundle> PRIMROSE_DRIED = defineBundle("primrose_bundle");//#Сушеный Багульник//#Dried Wild Rosemary
+	public static final RegistryObject<BaseBundle> NETTLE_DRIED = defineBundle("nettle_bundle");//#Сушеный Багульник//#Dried Wild Rosemary
+	public static final RegistryObject<BaseBundle> HERBS_DRIED = defineBundle("dried_herbs_bundle");//#Сушеный Багульник//#Dried Wild Rosemary
+	
+	
 	
 	//-----Fresh 
 		public static final RegistryObject<BaseBundle> FIREWHIP_FRESH = defineBundle("firewhip_fresh");//#Сушеный Жар-Цвет//#Dried Firewhip
@@ -161,9 +169,9 @@ public class ItemInit {
 		public static final RegistryObject<BaseBundle> HEMLOCK_FRESH = defineBundle("hemlock_fresh");//#Сушеный Болиголов//#Dried Hemlock
 		public static final RegistryObject<BaseBundle> HENBANE_FRESH = defineBundle("henbane_fresh");//#Сушеная Белена//#Dried Henbane
 		public static final RegistryObject<BaseBundle> IMMORTELLE_FRESH = defineBundle("immortelle_fresh");//#Сушеный Сухоцвет//#Dried Immortelle
-		public static final RegistryObject<BaseBundle> CHRYSANTHS_FRESH = defineBundle("crysanths_fresh");//#Сушеный Тысячелистник//#Dried Crysanths
+		public static final RegistryObject<BaseBundle> CHRYSANTHS_FRESH = defineBundle("crysanth_fresh");//#Сушеный Тысячелистник//#Dried Crysanths
 		public static final RegistryObject<BaseBundle> WILDROSEMARY_FRESH = defineBundle("wildrosemary_fresh");//#Сушеный Багульник//#Dried Wild Rosemary
-
+		public static final RegistryObject<BaseBundle> KELP_FRESH = defineBundle("kelp_fresh");//#Сушеный Багульник//#Dried Wild Rosemary
 	
 	//-----Powders
 	public static final RegistryObject<BasePowder> FIREWHIP_POWDER = definePowder("firewhip_powder");//#Порошок из Жар-Цвета//#Firewhip Powder
@@ -198,7 +206,7 @@ public class ItemInit {
 	//@//w.spawnParticle("flame", e.posX + Math.sin((double)i) * 0.3D, e.posY + 0.4D, e.posZ + Math.cos((double)i) * 0.3D, 0.0D, 0.0D, 0.0D);
 
 	public static final RegistryObject<ArmorItem> defineWreath(String name,ArmorMaterial M){
-		  return SlavicItems.register(name,() -> new ArmorItem(M, EquipmentSlot.HEAD,(new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
+		  return SlavicItems.register(name,() -> new WreathBase(M, EquipmentSlot.HEAD,(new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
 	}
 	
 	

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "facing=south":  { "model": "slaviccraft:block/leshin_head","y":180},
+    "facing=north":  { "model": "slaviccraft:block/leshin_head","y":0},
+    "facing=east":  { "model": "slaviccraft:block/leshin_head","y":90},
+    "facing=west":  { "model": "slaviccraft:block/leshin_head","y":270}
+  }
+}
+
+

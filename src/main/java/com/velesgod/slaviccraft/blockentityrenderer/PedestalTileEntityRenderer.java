@@ -11,6 +11,7 @@ import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.block.model.ItemTransforms.TransformType;
 import net.minecraft.client.renderer.blockentity.BlockEntityRenderer;
 import net.minecraft.client.renderer.blockentity.BlockEntityRendererProvider;
+import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.client.resources.model.BakedModel;
 import net.minecraft.core.BlockPos;
 import net.minecraft.world.item.ItemStack;
@@ -55,7 +56,7 @@ public class PedestalTileEntityRenderer implements BlockEntityRenderer<PedestalT
     	matrixstack.scale(scale, scale, scale);
     	BakedModel  model = mc.getItemRenderer().getModel(stack, null, null,combinedOverlay);
     	
-    	mc.getItemRenderer().render(stack, TransformType.GROUND, true, matrixstack, buffer, lightLevel, combinedOverlay, model);
+    	mc.getItemRenderer().render(stack, TransformType.GROUND, true, matrixstack, buffer, 255, 255, model);
     	matrixstack.popPose();
     	
     }
@@ -78,7 +79,8 @@ public class PedestalTileEntityRenderer implements BlockEntityRenderer<PedestalT
     	te.angle+=2*partialTicks;
     	//angle = (angle) % 360;
     	//	System.out.println(angle);
-    	    	renderItem(te.getStack(0),
+    	
+    	renderItem(te.getStack(0),
     	    			new double[] {0.5f,1.2f+Math.sin(te.angle*0.06f)*0.06f,0.5f},
     	    			  Vector3f.YP.rotationDegrees(te.angle),
     	       		matrixStackIn, bufferIn,partialTicks,combindOverlayIn,lightLevel,1.0f);

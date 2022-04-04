@@ -1,7 +1,7 @@
 {
 	"format_version": "1.8.0",
 	"animations": {
-		"idle": {
+		"animation.raven.idle": {
 			"loop": true,
 			"animation_length": 1.4,
 			"bones": {
@@ -71,7 +71,7 @@
 				}
 			}
 		},
-		"walk": {
+		"animation.raven.walk": {
 			"loop": true,
 			"animation_length": 0.8,
 			"bones": {
@@ -208,7 +208,7 @@
 				}
 			}
 		},
-		"fly": {
+		"animation.raven.fly ": {
 			"loop": true,
 			"animation_length": 0.4,
 			"bones": {

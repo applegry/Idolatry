@@ -54,7 +54,7 @@ public class EffectLightFeet extends SlavicEffect {
 	   
 	    @Override
 	    public void applyEffectTick(LivingEntity entity, int tick) {
-
+	    	
 	    }
 
 	    

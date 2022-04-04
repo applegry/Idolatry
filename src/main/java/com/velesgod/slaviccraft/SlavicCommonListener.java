@@ -2,6 +2,7 @@ package com.velesgod.slaviccraft;
 
 import com.velesgod.slaviccraft.core.init.EntityInit;
 import com.velesgod.slaviccraft.entity.SlavicGhost;
+import com.velesgod.slaviccraft.entity.SlavicLeshin;
 
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -17,9 +18,9 @@ public class SlavicCommonListener {
 	public static void registerEntityAttributes(EntityAttributeCreationEvent event) {
 		
 
-			event.put(EntityInit.SLAVIC_GHOST.get(),
-					SlavicGhost.createMobAttributes().build());
+			event.put(EntityInit.SLAVIC_GHOST.get(),SlavicGhost.createMobAttributes().build());
 
+			event.put(EntityInit.SLAVIC_LESHIN.get(),SlavicLeshin.createMobAttributes().build());
 	
 	}
 }

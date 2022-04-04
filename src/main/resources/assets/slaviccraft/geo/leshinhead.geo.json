@@ -1,0 +1,42 @@
+{
+	"format_version": "1.12.0",
+	"minecraft:geometry": [
+		{
+			"description": {
+				"identifier": "geometry.unknown",
+				"texture_width": 64,
+				"texture_height": 64,
+				"visible_bounds_width": 3,
+				"visible_bounds_height": 4.5,
+				"visible_bounds_offset": [0, 1.75, 0]
+			},
+			"bones": [
+				{
+					"name": "head",
+					"pivot": [0, 30.16715, -0.48951],
+					"rotation": [10, 0, 0],
+					"cubes": [
+						{"origin": [-3, 25.16715, -7.88951], "size": [6, 6, 10], "uv": [2, 18]},
+						{"origin": [3, 28.16715, -0.88951], "size": [6, 2, 2], "uv": [44, 30]},
+						{"origin": [7, 30.16715, -0.88951], "size": [2, 4, 2], "uv": [48, 34]},
+						{"origin": [-9, 30.16715, -0.88951], "size": [2, 4, 2], "uv": [0, 0]},
+						{"origin": [-9, 28.16715, -0.88951], "size": [6, 2, 2], "uv": [44, 30]}
+					]
+				},
+				{
+					"name": "jaw",
+					"parent": "head",
+					"pivot": [0, 26.16715, 0.11049],
+					"rotation": [5, 0, 0],
+					"cubes": [
+						{"origin": [-3, 24.16715, -7.88951], "size": [6, 2, 8], "inflate": -0.1, "uv": [0, 54]}
+					]
+				},
+				{
+					"name": "none",
+					"pivot": [0, 0, 0]
+				}
+			]
+		}
+	]
+}

@@ -39,7 +39,9 @@ public class IdolUtils{
 	
 	public static List<WreathRecipe> initRecipes(){
 		List<WreathRecipe> m = new ArrayList<WreathRecipe>();
+		
 		m.add(new WreathRecipe(ItemInit.ARTEMISISA_DRIED.get(),ItemInit.HEATHER_DRIED.get(),ItemInit.AGILITY_WREATH.get()));
+		
 		return m;
 	}
 	
