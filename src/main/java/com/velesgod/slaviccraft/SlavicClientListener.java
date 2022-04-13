@@ -9,6 +9,7 @@ import com.velesgod.slaviccraft.core.init.EntityInit;
 import com.velesgod.slaviccraft.entity.SlavicGhost;
 import com.velesgod.slaviccraft.entity.renderer.SlavicGhostRenderer;
 import com.velesgod.slaviccraft.entity.renderer.SlavicLeshinRenderer;
+import com.velesgod.slaviccraft.entity.renderer.SlavicRavenRenderer;
 import com.velesgod.slaviccraft.items.AmuletItem;
 import com.velesgod.slaviccraft.items.CopperAmuletItem;
 import com.velesgod.slaviccraft.items.LeshinAmuletItem;
@@ -40,5 +41,6 @@ public class SlavicClientListener {
 	public static void registerRendererss(final EntityRenderersEvent.RegisterRenderers event) {
 		event.registerEntityRenderer(EntityInit.SLAVIC_GHOST.get(), SlavicGhostRenderer::new);
 		event.registerEntityRenderer(EntityInit.SLAVIC_LESHIN.get(), SlavicLeshinRenderer::new);
+		event.registerEntityRenderer(EntityInit.SLAVIC_RAVEN.get(), SlavicRavenRenderer::new);
 	}
 }

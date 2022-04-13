@@ -247,7 +247,7 @@ public class BaseIdolTileEntity extends BlockEntity{
 			}
 		}
 		
-		chika.setGlowingTag(true);
+		
 		if(counter>=MAX) { active=false; counter*=0; chika.kill();
 		level.setBlock(worldPosition,level.getBlockState(worldPosition).setValue(BlockStateProperties.LIT, false), 8);
 		}
@@ -321,7 +321,7 @@ public class BaseIdolTileEntity extends BlockEntity{
 	
 	 private void createSphere(Level world,BlockPos ent,double speed, int size)
 	    {
-		   System.out.println();
+		   //System.out.println();
 	        double d0 = ent.getX()+0.5;
 	        double d1 = ent.getY();
 	        double d2 = ent.getZ()+0.5;

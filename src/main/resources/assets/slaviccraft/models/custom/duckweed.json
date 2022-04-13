@@ -3,8 +3,8 @@
 	"texture_size": [32, 32],
 	"elements": [
 		{
-			"from": [-8, 0.3, -8],
-			"to": [24, 0.3, 24],
+			"from": [-8, 0.5, -8],
+			"to": [24, 0.501, 24],
 			"faces": {
 				"north": {"uv": [0, 0, 16, 0], "texture": "#missing"},
 				"east": {"uv": [0, 0, 16, 0], "texture": "#missing"},

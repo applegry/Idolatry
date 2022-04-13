@@ -3,6 +3,7 @@ package com.velesgod.slaviccraft;
 import com.velesgod.slaviccraft.core.init.EntityInit;
 import com.velesgod.slaviccraft.entity.SlavicGhost;
 import com.velesgod.slaviccraft.entity.SlavicLeshin;
+import com.velesgod.slaviccraft.entity.SlavicRaven;
 
 import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.attributes.Attributes;
@@ -22,5 +23,8 @@ public class SlavicCommonListener {
 
 			event.put(EntityInit.SLAVIC_LESHIN.get(),SlavicLeshin.createMobAttributes().build());
 	
+			event.put(EntityInit.SLAVIC_RAVEN.get(),SlavicRaven.createMobAttributes().build());
+			
+			
 	}
 }

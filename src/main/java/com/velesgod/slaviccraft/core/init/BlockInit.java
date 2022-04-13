@@ -11,6 +11,7 @@ import com.velesgod.slaviccraft.blocks.ElixirCauldron;
 import com.velesgod.slaviccraft.blocks.GoldenLeaves;
 import com.velesgod.slaviccraft.blocks.HouseBrownieAltar;
 import com.velesgod.slaviccraft.blocks.LeshinHead;
+import com.velesgod.slaviccraft.blocks.LeshinIdol;
 import com.velesgod.slaviccraft.blocks.LinenBlock;
 import com.velesgod.slaviccraft.blocks.LivingWood;
 import com.velesgod.slaviccraft.blocks.PedestalBlock;
@@ -64,6 +65,7 @@ public class BlockInit {
 	 	
 	  public static final RegistryObject<Block> FEAR_IDOL_BLOCK = SlavicBlocks.register("fear_idol", () -> new BaseIdol());
 	  public static final RegistryObject<Block> GROWTH_IDOL_BLOCK = SlavicBlocks.register("growth_idol", () -> new BaseIdol());
+	  public static final RegistryObject<Block> LESHIN_IDOL = SlavicBlocks.register("leshin_idol",() -> new LeshinIdol());
 	
 	  public static final RegistryObject<Block> CUT_OAK_BLOCK = SlavicBlocks.register("cut_oak_block",() -> new CutOakBlock()); 
 	  public static final RegistryObject<Block> CUT_BIRCH_BLOCK =SlavicBlocks.register("cut_birch_block",() -> new CutOakBlock());

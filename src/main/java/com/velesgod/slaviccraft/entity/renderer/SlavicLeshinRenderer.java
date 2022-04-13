@@ -10,15 +10,19 @@ import com.velesgod.slaviccraft.entity.model.SlavicLeshinModel;
 import net.minecraft.client.renderer.MultiBufferSource;
 import net.minecraft.client.renderer.RenderType;
 import net.minecraft.client.renderer.entity.EntityRendererProvider;
+import net.minecraft.client.renderer.entity.layers.ItemInHandLayer;
+import net.minecraft.client.renderer.entity.layers.PlayerItemInHandLayer;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.entity.EntityType;
+import software.bernie.example.client.renderer.entity.layer.GeoExampleLayer;
 import software.bernie.geckolib3.renderers.geo.GeoEntityRenderer;
+import software.bernie.geckolib3.renderers.geo.GeoLayerRenderer;
 
 public class SlavicLeshinRenderer extends GeoEntityRenderer<SlavicLeshin> {
 
 	public SlavicLeshinRenderer(EntityRendererProvider.Context renderManager) {
-		
 		super(renderManager, new SlavicLeshinModel());
+
 		this.shadowRadius = 0;
 		this.shadowStrength = 0;
 	

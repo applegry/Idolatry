@@ -77,6 +77,14 @@ public class SlavicSackTileEntity extends InventoryBlockEntity{
 		for(int i=0;i<9;i++)
 		this.inventory.setStackInSlot(i, ItemStack.EMPTY);
 	}
+	
+	public boolean isClear() {
+		boolean b = true;
+		for(int i=0;i<9;i++)
+			b = (this.inventory.getStackInSlot(i) == ItemStack.EMPTY);
+		return b;
+	}
+
 
 
 	 

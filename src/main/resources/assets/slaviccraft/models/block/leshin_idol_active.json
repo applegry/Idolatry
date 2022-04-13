@@ -1,0 +1,7 @@
+{
+"parent": "slaviccraft:custom/idol",
+	"textures": {
+		"0": "slaviccraft:blocks/idols/leshin_idol_active",
+		"particle": "slaviccraft:blocks/idols/leshin_idol_active"
+	}
+}

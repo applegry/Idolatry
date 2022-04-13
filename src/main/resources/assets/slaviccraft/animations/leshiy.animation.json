@@ -1589,6 +1589,31 @@
 					}
 				}
 			}
+		},
+		"animation.leshiy.magic": {
+			"loop": true,
+			"animation_length": 1.52,
+			"bones": {
+				"rightarm": {
+					"rotation": {
+						"0.0": {
+							"vector": [2.5, 0, 0]
+						},
+						"0.48": {
+							"vector": [-10, 0, 0]
+						},
+						"0.76": {
+							"vector": [-27.39899, 6.65765, -3.45678]
+						},
+						"1.08": {
+							"vector": [-28.27819, -8.84366, 4.73691]
+						},
+						"1.48": {
+							"vector": [2.5, 0, 0]
+						}
+					}
+				}
+			}
 		}
 	},
 	"geckolib_format_version": 2

@@ -6,6 +6,7 @@ import com.velesgod.slaviccraft.blocks.tile.ClothBlockTileEntity;
 import com.velesgod.slaviccraft.blocks.tile.DrierTileEntity;
 import com.velesgod.slaviccraft.blocks.tile.ElixirCauldronTileEntity;
 import com.velesgod.slaviccraft.blocks.tile.HBATileEntity;
+import com.velesgod.slaviccraft.blocks.tile.LeshinIdolTileEntity;
 import com.velesgod.slaviccraft.blocks.tile.PedestalTileEntity;
 import com.velesgod.slaviccraft.blocks.tile.PounderTileEntity;
 import com.velesgod.slaviccraft.blocks.tile.SlavicSackTileEntity;
@@ -40,7 +41,11 @@ public class TileEntitiesInit{
 							 BlockInit.GROWTH_IDOL_BLOCK.get()})));
 	    
 	  
-	
+	  
+	  public static final RegistryObject<BlockEntityType<LeshinIdolTileEntity>> LESHINIDOL = 
+			SlavicTileEntities.register("leshinidol", 
+					() -> build(BlockEntityType.Builder.of(LeshinIdolTileEntity::new, new Block[] {BlockInit.LESHIN_IDOL.get()})));
+	  
 	  
 	  
 	  

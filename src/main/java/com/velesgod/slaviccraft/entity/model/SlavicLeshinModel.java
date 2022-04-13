@@ -32,10 +32,11 @@ public class SlavicLeshinModel extends AnimatedTickingGeoModel<SlavicLeshin> {
 	public void setLivingAnimations(SlavicLeshin entity, Integer uniqueID, AnimationEvent customPredicate) {
 		super.setLivingAnimations(entity, uniqueID, customPredicate);
 		IBone head = this.getAnimationProcessor().getBone("head");
-
+		if(entity.getState() != -1) {
 		LivingEntity entityIn = (LivingEntity) entity;
 		EntityModelData extraData = (EntityModelData) customPredicate.getExtraDataOfType(EntityModelData.class).get(0);
 		head.setRotationX(extraData.headPitch * ((float) Math.PI / 180F));
 		head.setRotationY(extraData.netHeadYaw * ((float) Math.PI / 180F));
+		}
 	}
 }

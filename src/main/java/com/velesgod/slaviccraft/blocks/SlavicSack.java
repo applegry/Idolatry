@@ -70,11 +70,13 @@ public class SlavicSack extends Block  implements EntityBlock{
 				    	  SlavicSackTileEntity shulkerboxblockentity = (SlavicSackTileEntity)blockentity;
 				         if (!p_56212_.isClientSide) {
 				            ItemStack itemstack = new ItemStack(this);
+				     
 				            blockentity.saveToItem(itemstack);
 
 
 				            ItemEntity itementity = new ItemEntity(p_56212_, (double)p_56213_.getX() + 0.5D, (double)p_56213_.getY() + 0.5D, (double)p_56213_.getZ() + 0.5D, itemstack);
 				            itementity.setDefaultPickUpDelay();
+				            if(!(shulkerboxblockentity.isClear() && p_56215_.isCreative()))
 				            p_56212_.addFreshEntity(itementity);
 				         } 
 				      }

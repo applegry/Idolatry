@@ -5,6 +5,7 @@ package com.velesgod.slaviccraft.core.init;
 import com.velesgod.slaviccraft.SlavicCraftMod;
 import com.velesgod.slaviccraft.entity.SlavicGhost;
 import com.velesgod.slaviccraft.entity.SlavicLeshin;
+import com.velesgod.slaviccraft.entity.SlavicRaven;
 
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
@@ -25,6 +26,9 @@ public class EntityInit {
 	
 	public static final RegistryObject<EntityType<SlavicLeshin>> SLAVIC_LESHIN = buildEntity(
 			SlavicLeshin::new, SlavicLeshin.class, 0.8F, 2.0F);
+	
+	public static final RegistryObject<EntityType<SlavicRaven>> SLAVIC_RAVEN = buildEntity(
+			SlavicRaven::new, SlavicRaven.class, .5F, 0.5F);
 
 
 	public static <T extends Entity> RegistryObject<EntityType<T>> buildEntity(EntityType.EntityFactory<T> entity,

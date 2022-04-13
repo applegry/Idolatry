@@ -33,6 +33,8 @@ import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.Rarity;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.Tiers;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.RegistryObject;
@@ -85,12 +87,12 @@ public class ItemInit {
     
 
 	
-    public static final RegistryObject<LinenClothes> LINEN_TUNIC = SlavicItems.register("linen_tunic", () ->
-	new LinenClothes(SlavicArmorMaterial.LINEN_CLOTHES, EquipmentSlot.CHEST, (new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
+  //  public static final RegistryObject<LinenClothes> LINEN_TUNIC = SlavicItems.register("linen_tunic", () ->
+//	new LinenClothes(SlavicArmorMaterial.LINEN_CLOTHES, EquipmentSlot.CHEST, (new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
     
     
-    public static final RegistryObject<LinenClothes> LINEN_PANTS = SlavicItems.register("linen_pants", () ->
-	new LinenClothes(SlavicArmorMaterial.LINEN_CLOTHES, EquipmentSlot.LEGS, (new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
+  // public static final RegistryObject<LinenClothes> LINEN_PANTS = SlavicItems.register("linen_pants", () ->
+	//new LinenClothes(SlavicArmorMaterial.LINEN_CLOTHES, EquipmentSlot.LEGS, (new Item.Properties()).tab(SlavicCraftTab.SlavicGroup)));
     
     
 
@@ -109,7 +111,21 @@ public class ItemInit {
 	public static final RegistryObject<Item> DEADBLOOD_BOTTLE = defineItem("deadblood_bottle");//#Пузырек мертвой крови//#Dead Blood Bottle
 	public static final RegistryObject<Item> LIVINGBLOOD_BOTTLE = defineItem("liveblood_bottle");//#Пузырек живой крови//#Living Blood Bottle
 	public static final RegistryObject<Item> RITUAL_DAGGER = SlavicItems.register("ritual_dagger",() -> new RitualDagger());//#Ритуальный кинжал//#Ritual dagger
-	public static final RegistryObject<Item> SICKLE = SlavicItems.register("slavic_sickle",() -> new Sickle());//#Ритуальный кинжал//#Ritual dagger
+	
+	
+	
+	public static final RegistryObject<Item> WOODEN_SICKLE = SlavicItems.register("wooden_sickle",() -> new Sickle(Tiers.WOOD,2));//#Ритуальный кинжал//#Ritual dagger
+	
+	public static final RegistryObject<Item> STONE_SICKLE = SlavicItems.register("stone_sickle",() -> new Sickle(Tiers.STONE,2));//#Ритуальный кинжал//#Ritual dagger
+	
+	public static final RegistryObject<Item> IRON_SICKLE = SlavicItems.register("iron_sickle",() -> new Sickle(Tiers.IRON,3));//#Ритуальный кинжал//#Ritual dagger
+	
+	public static final RegistryObject<Item> GOLDEN_SICKLE = SlavicItems.register("golden_sickle",() -> new Sickle(Tiers.GOLD,3));//#Ритуальный кинжал//#Ritual dagger
+	
+	public static final RegistryObject<Item> DIAMOND_SICKLE = SlavicItems.register("diamond_sickle",() -> new Sickle(Tiers.DIAMOND,4));//#Ритуальный кинжал//#Ritual dagger
+	
+	public static final RegistryObject<Item> NETHERITE_SICKLE = SlavicItems.register("netherite_sickle",() -> new Sickle(Tiers.NETHERITE,4));//#Ритуальный кинжал//#Ritual dagger
+	
 	
 	public static final RegistryObject<Item> LINEN = defineItem("linen");//#Лён//#Linen
 	public static final RegistryObject<Item> LINEN_SEEDS = SlavicItems.register("linen_seeds",() -> new BaseSeed(BlockInit.LINEN_BLOCK.get(),5));//#Семена льна//#Linen seeds

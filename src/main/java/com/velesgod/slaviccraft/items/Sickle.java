@@ -12,6 +12,7 @@ import net.minecraft.world.InteractionResult;
 
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TieredItem;
 import net.minecraft.world.item.Tiers;
 import net.minecraft.world.item.context.UseOnContext;
@@ -24,11 +25,14 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class Sickle extends TieredItem{
 
-	public Sickle() {
+	public int radius = 1;
 	
-		super(Tiers.STONE, new Item.Properties().tab(SlavicCraftTab.SlavicGroup));
+	public Sickle(Tier tier,int r) {
+	
+		super(tier, new Item.Properties().tab(SlavicCraftTab.SlavicGroup));
+		this.radius = r;
 		//attackDamageIn, attackSpeedIn, builder
-		// TODO Auto-generated constructor stub
+		// TODO Auto-generated constructor stub Tiers.STONE
 	}
 	
 	@Override
@@ -40,9 +44,9 @@ public class Sickle extends TieredItem{
 		if(world.getBlockState(pos).getBlock() instanceof BushBlock || 
 				   world.getBlockState(pos).getBlock() instanceof BaseHerb  ||
 				   world.getBlockState(pos).getBlock() instanceof DoublePlantBlock)
-		for(int x = pos.getX()-2;x<pos.getX()+3;x++)
-			for(int y = pos.getY()-2;y<pos.getY()+3;y++)
-			for(int z = pos.getZ()-2;z<pos.getZ()+3;z++) {
+		for(int x = pos.getX()-radius;x<pos.getX()+(radius/2)+1;x++)
+			for(int y = pos.getY()-radius;y<pos.getY()+radius+1;y++)
+			for(int z = pos.getZ()-radius;z<pos.getZ()+radius+1;z++) {
 				BlockPos p = new BlockPos(x,y,z);
 				if(world.getBlockState(p).getBlock() instanceof BushBlock || 
 				   world.getBlockState(p).getBlock() instanceof BaseHerb  ||

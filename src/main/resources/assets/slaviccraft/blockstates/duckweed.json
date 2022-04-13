@@ -1,21 +1,13 @@
 {
   "variants": {
-    "": [
-      {
-        "model": "slaviccraft:block/duckweed"
-      },
-      {
-        "model": "slaviccraft:block/duckweed_2",
-        "y": 90
-      },
-      {
-        "model": "slaviccraft:block/duckweed_1",
-        "y": 180
-      },
-      {
-        "model": "slaviccraft:block/duckweed",
-        "y": 270
-      }
-    ]
+    "age=0": {
+      "model":  "slaviccraft:block/duckweed"
+    },
+    "age=1": {
+      "model":  "slaviccraft:block/duckweed_1"
+    },
+    "age=2": {
+      "model":  "slaviccraft:block/duckweed_2"
+    }
   }
 }

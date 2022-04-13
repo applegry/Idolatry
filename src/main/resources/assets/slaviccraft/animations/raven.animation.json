@@ -208,7 +208,7 @@
 				}
 			}
 		},
-		"animation.raven.fly ": {
+		"animation.raven.fly": {
 			"loop": true,
 			"animation_length": 0.4,
 			"bones": {

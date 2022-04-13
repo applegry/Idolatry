@@ -51,6 +51,7 @@ public class LinenBlock extends BaseHerb implements BonemealableBlock {
    
    public IntegerProperty getAgeProperty() {
       return AGE;
+   
    }
 
    public int getMaxAge() {

@@ -103,6 +103,7 @@ import com.velesgod.slaviccraft.core.init.EntityInit;
 import com.velesgod.slaviccraft.core.init.ItemInit;
 import com.velesgod.slaviccraft.core.init.ParticleInit;
 import com.velesgod.slaviccraft.core.init.SoundInit;
+import com.velesgod.slaviccraft.core.init.StructureInit;
 import com.velesgod.slaviccraft.core.init.TileEntitiesInit;
 import com.velesgod.slaviccraft.entity.SlavicLeshin;
 import com.velesgod.slaviccraft.gui.DrierBlockGui;
@@ -112,9 +113,10 @@ import com.velesgod.slaviccraft.particles.ParticleTypeAmber;
 import com.velesgod.slaviccraft.particles.ParticleTypeGoldenLeaf;
 import com.velesgod.slaviccraft.particles.ParticleTypeIdol;
 import com.velesgod.slaviccraft.particles.ParticleTypeRaven;
+import com.velesgod.slaviccraft.particles.ParticleTypeRed;
 import com.velesgod.slaviccraft.world.SlavicOreGeneration;
 
-//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
+//
 @Mod("slaviccraft")
 @Mod.EventBusSubscriber(modid = SlavicCraftMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 
@@ -133,7 +135,7 @@ public class SlavicCraftMod {
 		SoundInit.SlavicSounds.register(bus);
 		BlockInit.SlavicBlocks.register(bus);
 		ItemInit.SlavicItems.register(bus);
-
+		StructureInit.SlavicStructures.register(bus);
 		TileEntitiesInit.SlavicTileEntities.register(bus);
 		MinecraftForge.EVENT_BUS.register(this);
 	    FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
@@ -156,6 +158,7 @@ public class SlavicCraftMod {
 			Minecraft.getInstance().particleEngine.register(ParticleInit.RAVEN_PARTICLE.get(),ParticleTypeRaven.Provider::new);
 			Minecraft.getInstance().particleEngine.register(ParticleInit.AMBER_PARTICLE.get(),ParticleTypeAmber.Provider::new);
 			Minecraft.getInstance().particleEngine.register(ParticleInit.IDOL_PARTICLE.get(),ParticleTypeIdol.Provider::new);
+			Minecraft.getInstance().particleEngine.register(ParticleInit.RED_PARTICLE.get(),ParticleTypeRed.Provider::new);
 			Minecraft.getInstance().particleEngine.register(ParticleInit.GOLDEN_LEAF_PARTICLE.get(),ParticleTypeGoldenLeaf.Provider::new);
 		}
 	
@@ -365,6 +368,9 @@ public class SlavicCraftMod {
 	 
 		@SubscribeEvent
 		public void onAttackEntity(final AttackEntityEvent ev) {
+			if(ev.getTarget() instanceof SlavicLeshin) {
+				((SlavicLeshin)ev.getTarget()).alertAll();
+			}
 			ItemStack stack = ev.getEntityLiving().getMainHandItem();
 			CompoundTag nbt = stack.getOrCreateTag();
 			int balm = nbt.getInt("balm_value");
@@ -374,6 +380,7 @@ public class SlavicCraftMod {
 				MobEffect eff = MobEffect.byId(nbt.getInt("balm_effect"));
 				LivingEntity ent = (LivingEntity) ev.getTarget();
 				ent.addEffect(new MobEffectInstance(eff,10));
+				
 				balm-=1;
 				if(balm>0) {
 					nbt.putInt("balm_value", balm);
@@ -459,29 +466,8 @@ public class SlavicCraftMod {
 					player.setOnGround(true);
 					player.bob = 0.1f;
 				}
-				if(world.getBlockState(new BlockPos(player.getPosition(1))).getBlock() == Blocks.POWDER_SNOW && 
-						world.getBlockState(new BlockPos(player.getPosition(1)).above()).getBlock() == Blocks.AIR)
-				{
-					//player.addTag("powder_snow_walkable_mobs");
-					player.setIsInPowderSnow(false);// = false;
-					player.setSpeed(50.2f);
-					double dy = player.getDeltaMovement().y() > 0.1 ? player.getDeltaMovement().y():0;
-					player.setDeltaMovement(player.getDeltaMovement().x(),dy,player.getDeltaMovement().z());
-					player.setOnGround(true);
 				
-					player.bob = 0.1f;
-				}
-				//if(world.getBlockState(new BlockPos(player.getPosition(1))).getBlock() == Blocks.BIG_DRIPLEAF)
-				{
-					
-					for(BlockPos pos: BlockPos.spiralAround(new BlockPos(player.getPosition(1)), 0, Direction.EAST,  Direction.NORTH)) {
-						world.setBlock(pos, Blocks.SAND.defaultBlockState(), 3);
-					}
-					
-				
-					
-					
-				}
+		
 			}
 		
 		}
