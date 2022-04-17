@@ -7,6 +7,7 @@ import net.minecraft.client.color.item.ItemColors;
 import net.minecraft.client.gui.screens.MenuScreens.ScreenConstructor;
 import net.minecraft.client.gui.screens.MenuScreens;
 import net.minecraft.client.gui.screens.Screen;
+import net.minecraft.client.particle.SoulParticle;
 import net.minecraft.client.renderer.BiomeColors;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
@@ -47,6 +48,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.item.MilkBucketItem;
 import net.minecraft.world.item.alchemy.PotionUtils;
 import net.minecraft.world.level.GameRules.Category;
 import net.minecraft.world.level.Level;
@@ -76,6 +78,7 @@ import net.minecraftforge.event.entity.player.ItemTooltipEvent;
 import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.entity.player.PlayerInteractEvent;
 import net.minecraftforge.event.world.BiomeLoadingEvent;
+import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.eventbus.api.EventPriority;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -88,6 +91,7 @@ import net.minecraftforge.registries.RegistryObject;
 import software.bernie.geckolib3.GeckoLib;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Iterator;
 
 import org.apache.logging.log4j.LogManager;
@@ -105,6 +109,7 @@ import com.velesgod.slaviccraft.core.init.ParticleInit;
 import com.velesgod.slaviccraft.core.init.SoundInit;
 import com.velesgod.slaviccraft.core.init.StructureInit;
 import com.velesgod.slaviccraft.core.init.TileEntitiesInit;
+import com.velesgod.slaviccraft.core.init.VillagerInit;
 import com.velesgod.slaviccraft.entity.SlavicLeshin;
 import com.velesgod.slaviccraft.gui.DrierBlockGui;
 import com.velesgod.slaviccraft.gui.ElixirCauldronGui;
@@ -113,10 +118,10 @@ import com.velesgod.slaviccraft.particles.ParticleTypeAmber;
 import com.velesgod.slaviccraft.particles.ParticleTypeGoldenLeaf;
 import com.velesgod.slaviccraft.particles.ParticleTypeIdol;
 import com.velesgod.slaviccraft.particles.ParticleTypeRaven;
-import com.velesgod.slaviccraft.particles.ParticleTypeRed;
+import com.velesgod.slaviccraft.particles.ParticleTypeSparkle;
 import com.velesgod.slaviccraft.world.SlavicOreGeneration;
 
-//
+//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
 @Mod("slaviccraft")
 @Mod.EventBusSubscriber(modid = SlavicCraftMod.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
 
@@ -135,7 +140,9 @@ public class SlavicCraftMod {
 		SoundInit.SlavicSounds.register(bus);
 		BlockInit.SlavicBlocks.register(bus);
 		ItemInit.SlavicItems.register(bus);
-		StructureInit.SlavicStructures.register(bus);
+		VillagerInit.PoiTypes.register(bus);
+		VillagerInit.SlavicVillagers.register(bus);
+	//	StructureInit.SlavicStructures.register(bus);
 		TileEntitiesInit.SlavicTileEntities.register(bus);
 		MinecraftForge.EVENT_BUS.register(this);
 	    FMLJavaModLoadingContext.get().getModEventBus().addListener(this::clientSetup);
@@ -154,11 +161,10 @@ public class SlavicCraftMod {
 		@SuppressWarnings("resource")
 		@SubscribeEvent(priority = EventPriority.LOWEST)
 		public static void registerParticles(ParticleFactoryRegisterEvent event) {
-			
+			Minecraft.getInstance().particleEngine.register(ParticleInit.SPARKLE_PARTICLE.get(),ParticleTypeSparkle.Provider::new);
 			Minecraft.getInstance().particleEngine.register(ParticleInit.RAVEN_PARTICLE.get(),ParticleTypeRaven.Provider::new);
 			Minecraft.getInstance().particleEngine.register(ParticleInit.AMBER_PARTICLE.get(),ParticleTypeAmber.Provider::new);
 			Minecraft.getInstance().particleEngine.register(ParticleInit.IDOL_PARTICLE.get(),ParticleTypeIdol.Provider::new);
-			Minecraft.getInstance().particleEngine.register(ParticleInit.RED_PARTICLE.get(),ParticleTypeRed.Provider::new);
 			Minecraft.getInstance().particleEngine.register(ParticleInit.GOLDEN_LEAF_PARTICLE.get(),ParticleTypeGoldenLeaf.Provider::new);
 		}
 	
@@ -172,6 +178,17 @@ public class SlavicCraftMod {
 		});
 	}
 
+	
+	
+	 @SubscribeEvent
+	    public static void onCommonSetup(FMLCommonSetupEvent event)
+	    {
+	        SlavicOreGeneration.initFeatures();
+	        VillagerInit.registerPoi();
+	    }
+	 
+	
+	
 	 private  void clientSetup(FMLClientSetupEvent event) {
 			
 		
@@ -294,11 +311,21 @@ public class SlavicCraftMod {
 	   }
      }
 	 
+     
+     
+     
    public BlockPos getRespawn(Player player) {
 	   return ((ServerPlayer)player).getRespawnPosition();
    }
      
 
+   
+   
+   
+   
+   
+   
+   
      
    
 	 
@@ -309,12 +336,7 @@ public class SlavicCraftMod {
 		}
 		
 	 
-	 @SubscribeEvent
-	    public static void onCommonSetup(FMLCommonSetupEvent event)
-	    {
-	        SlavicOreGeneration.initFeatures();
-	    }
-	 
+
 	 
 	 	@OnlyIn(Dist.CLIENT)
 	  public static void registerClient(ModLoadingContext context) {
@@ -473,8 +495,47 @@ public class SlavicCraftMod {
 		}
 	 
 
+		public Block[] ForestBlocks = {
+			Blocks.ACACIA_WOOD,
+			Blocks.BIRCH_WOOD,
+			Blocks.SPRUCE_WOOD,
+			Blocks.OAK_WOOD,
+			Blocks.DARK_OAK_WOOD,
+			Blocks.JUNGLE_WOOD,
+			
+			Blocks.ACACIA_LOG,
+			Blocks.SPRUCE_LOG,
+			Blocks.JUNGLE_LOG,
+			Blocks.OAK_LOG,
+			Blocks.DARK_OAK_LOG,
+			Blocks.BIRCH_LOG,
+			
+			
+			Blocks.ACACIA_LEAVES,
+			Blocks.SPRUCE_LEAVES,
+			Blocks.JUNGLE_LEAVES,
+			Blocks.OAK_LEAVES,
+			Blocks.DARK_OAK_LEAVES,
+			Blocks.BIRCH_LEAVES
+		};
 		
-		
+		@SubscribeEvent
+		public void onBlockCrush(final BlockEvent.BreakEvent event) {
+			BlockPos p = event.getPos();
+	
+			if(!event.getPlayer().isCreative())
+			if(Arrays.asList(ForestBlocks).contains(event.getState().getBlock())) {
+			
+			for(int x=-10;x<11;x++)
+			for(int y=-10;y<11;y++)
+			for(int z=-10;z<11;z++) {
+					if(event.getWorld().getBlockState(new BlockPos(p.getX()+x,p.getY()+y,p.getZ()+z)).getBlock() == BlockInit.LIVING_WOOD.get()){
+						event.getPlayer().addEffect(new MobEffectInstance(EffectInit.FOREST_WRATH.get(),20*30,10, false,true));
+						break;
+					}
+				}
+			}
+		}
 		
 }
 

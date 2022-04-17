@@ -136,10 +136,14 @@
 
 "effect.slaviccraft.svarog_circle":"Svarog Spell",
 "effect.slaviccraft.poison_resist":"Posion Resistance",
+"effect.slaviccraft.forest_wrath":"Wrath of the Forest",
 
 "tooltip.slaviccraft.balm":"Oiled with Balm",
 "tooltip.slaviccraft.balm_of":"Blows left",
 
 "rite.slaviccraft.night":"The ritual must be performed at night",
-"rite.slaviccraft.fern":"There is no fern growing nearby"
+"rite.slaviccraft.fern":"There is no fern growing nearby",
+
+"entity.slaviccraft.slavicleshin": "Leshy",
+"entity.minecraft.villager.slaviccraft.herbalist": "Herbalist"
 }

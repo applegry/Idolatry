@@ -2,6 +2,7 @@ package com.velesgod.slaviccraft.core.init;
 
 import com.velesgod.slaviccraft.SlavicCraftMod;
 import com.velesgod.slaviccraft.effects.EffectFear;
+import com.velesgod.slaviccraft.effects.EffectForestWrath;
 import com.velesgod.slaviccraft.effects.EffectHaze;
 import com.velesgod.slaviccraft.effects.EffectHerbvision;
 import com.velesgod.slaviccraft.effects.EffectLightFeet;
@@ -32,6 +33,8 @@ public class EffectInit{
 	public static final RegistryObject<SlavicEffect> POSSESSION = SlavicEffects.register("possession",() -> new EffectPossession()); 
 	
 	public static final RegistryObject<SlavicEffect> HERBVISION = SlavicEffects.register("herbvision",() -> new EffectHerbvision()); 
+	
+	public static final RegistryObject<SlavicEffect> FOREST_WRATH = SlavicEffects.register("forest_wrath",() -> new EffectForestWrath()); 
 
 //	public static final RegistryObject<SlavicEffect> FEAR = SlavicEffects.register("fear",() -> new EffectFear()); 
 

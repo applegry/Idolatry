@@ -3,6 +3,10 @@
 /.gitignore
 /.project
 /.settings/
+/build.gradle
+/gradle.properties
+/gradle/
+/gradlew.bat
 /run/
 /runClient.launch
 /runData.launch

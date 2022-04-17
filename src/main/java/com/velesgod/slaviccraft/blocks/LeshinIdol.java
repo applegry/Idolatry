@@ -8,6 +8,7 @@ import com.velesgod.slaviccraft.blocks.tile.LeshinIdolTileEntity;
 import com.velesgod.slaviccraft.core.init.BlockInit;
 import com.velesgod.slaviccraft.core.init.EntityInit;
 import com.velesgod.slaviccraft.core.init.ItemInit;
+import com.velesgod.slaviccraft.core.init.SoundInit;
 import com.velesgod.slaviccraft.core.init.TileEntitiesInit;
 import com.velesgod.slaviccraft.entity.SlavicLeshin;
 
@@ -15,6 +16,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.level.ServerLevel;
+import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.item.ItemEntity;
@@ -75,7 +77,7 @@ public static final BooleanProperty LIT = BlockStateProperties.LIT;
 		public InteractionResult use(BlockState p_60503_, Level level, BlockPos p_60505_, Player p_60506_,
 				InteractionHand p_60507_, BlockHitResult p_60508_) {
 			if(p_60506_.getItemInHand(p_60507_).getItem() == ItemInit.LIVINGSTONE.get()) {
-			
+				level.playSound(p_60506_, p_60505_,SoundInit.L_IDOL.get(), SoundSource.MASTER, 5.f, 1.f);
 				counter = 100;
 				level.setBlock(p_60505_, p_60503_.setValue(LIT, true), 3);
 				p_60506_.getItemInHand(p_60507_).shrink(1);

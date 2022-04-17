@@ -29,7 +29,7 @@ abstract class SlavicItemRenderer{
 	@Inject(at = @At("RETURN"),
 	method = "Lnet/minecraft/client/renderer/entity/ItemRenderer;renderGuiItemDecorations(Lnet/minecraft/client/gui/Font;Lnet/minecraft/world/item/ItemStack;IILjava/lang/String;)V")
 	
-	//@Inject(at = @At("RhETURN"), method = "renderGuiItemDecorations", cancellable = true)
+	//@Inject(at = @At("RhETURN"), method = "renderGuiItemDecorations", cancellable = true) 
 	public void renderGuiItemDecorations(Font font, ItemStack stack, int x, int y, @Nullable String str,CallbackInfo info) {		
 		
 		            int j = stack.getOrCreateTag().getInt("balm_value");

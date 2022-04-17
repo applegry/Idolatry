@@ -1,46 +1,75 @@
-[13àïð.2022 18:27:31.556] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 1.18, --assetsDir, C:\Users\User\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 39.0.64, --fml.mcVersion, 1.18.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20211210.034407]
-[13àïð.2022 18:27:31.561] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 9.1.0+9.1.0+main.6690ee51 starting: java version 17.0.1 by Eclipse Adoptium
-[13àïð.2022 18:27:31.716] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/User/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%2327!/ Service=ModLauncher Env=CLIENT
-[13àïð.2022 18:27:37.159] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\User\.gradle\caches\forge_gradle\assets, --assetIndex, 1.18]
-[18:27:45] [Render thread/WARN]: Assets URL 'union:/C:/Users/User/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.18.1-39.0.64_mapped_official_1.18.1/forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/assets/.mcassetsroot' uses unexpected schema
-[18:27:45] [Render thread/WARN]: Assets URL 'union:/C:/Users/User/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.18.1-39.0.64_mapped_official_1.18.1/forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/data/.mcassetsroot' uses unexpected schema
-[13àïð.2022 18:27:45.765] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[18:27:45] [Render thread/INFO]: Setting user: Dev
-[18:27:46] [Render thread/INFO]: Backend library: LWJGL version 3.2.2 SNAPSHOT
-[18:27:46] [Render thread/ERROR]: Null comment for config option server, this is invalid and may be disallowed in the future.
-[18:27:47] [modloading-worker-0/INFO]: Forge mod loading, version 39.0.64, for MC 1.18.1 with MCP 20211210.034407
-[18:27:47] [modloading-worker-0/INFO]: MinecraftForge v39.0.64 Initialized
-[13àïð.2022 18:27:50.812] [Render thread/INFO] [com.mojang.text2speech.NarratorWindows/]: Narrator library for x64 successfully loaded
-[18:27:52] [Render thread/INFO]: Reloading ResourceManager: Default, Mod Resources
-[18:28:09] [Worker-Main-5/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/duckweed_1
-[18:28:09] [Worker-Main-5/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/duckweed
-[18:28:09] [Worker-Main-5/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/duckweed_2
-[18:28:09] [Worker-Main-5/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/dryer_top
-[18:28:09] [Worker-Main-5/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/dryer
-[18:28:11] [Worker-Main-8/ERROR]: Adding duplicate key 'ResourceKey[minecraft:worldgen/configured_feature / minecraft:slavic_nettle_flower]' to registry
-[13àïð.2022 18:28:11.499] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
-[13àïð.2022 18:28:12.429] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 39.0.64 Target: 39.1.0
-[18:28:17] [Render thread/INFO]: OpenAL initialized on device OpenAL Soft on Äèíàìèêè (Realtek High Definition Audio)
-[18:28:17] [Render thread/INFO]: Sound engine started
-[18:28:17] [Render thread/INFO]: Created: 1024x512x0 minecraft:textures/atlas/blocks.png-atlas
-[18:28:17] [Render thread/INFO]: Created: 256x128x0 minecraft:textures/atlas/signs.png-atlas
-[18:28:17] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
-[18:28:17] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
-[18:28:17] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/chest.png-atlas
-[18:28:17] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/beds.png-atlas
-[18:28:17] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/shulker_boxes.png-atlas
-[18:28:19] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
-[18:28:19] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
-[18:28:19] [Render thread/INFO]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
-[18:28:20] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
-[18:28:25] [Render thread/INFO]: Injecting existing registry data into this CLIENT instance
-[18:28:27] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[18:28:27] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
-[18:28:27] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[18:28:27] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
-[18:28:27] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
-[18:28:27] [Render thread/INFO]: Reloading ResourceManager: Default, , geckolib-1.18-forge-3.0.11_mapped_official_1.18.1.jar, main
-[18:28:31] [Render thread/ERROR]: Parsing error loading recipe slaviccraft:raveneye_balm
+[17Ð°Ð¿Ñ€.2022 21:52:37.976] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher running: args [--launchTarget, forgeclientuserdev, --version, MOD_DEV, --assetIndex, 1.18, --assetsDir, C:\Users\User\.gradle\caches\forge_gradle\assets, --gameDir, ., --fml.forgeVersion, 39.0.64, --fml.mcVersion, 1.18.1, --fml.forgeGroup, net.minecraftforge, --fml.mcpVersion, 20211210.034407, -mixin.config=slaviccraft.mixins.json, --mixin.config, slaviccraft.mixins.json]
+[17Ð°Ð¿Ñ€.2022 21:52:37.981] [main/INFO] [cpw.mods.modlauncher.Launcher/MODLAUNCHER]: ModLauncher 9.1.0+9.1.0+main.6690ee51 starting: java version 17.0.1 by Eclipse Adoptium
+[17Ð°Ð¿Ñ€.2022 21:52:38.158] [main/INFO] [mixin/]: SpongePowered MIXIN Subsystem Version=0.8.5 Source=union:/C:/Users/User/.gradle/caches/modules-2/files-2.1/org.spongepowered/mixin/0.8.5/9d1c0c3a304ae6697ecd477218fa61b850bf57fc/mixin-0.8.5.jar%2327!/ Service=ModLauncher Env=CLIENT
+[17Ð°Ð¿Ñ€.2022 21:52:43.157] [main/INFO] [mixin/]: Compatibility level set to JAVA_17
+[17Ð°Ð¿Ñ€.2022 21:52:43.163] [main/INFO] [cpw.mods.modlauncher.LaunchServiceHandler/MODLAUNCHER]: Launching target 'forgeclientuserdev' with arguments [--version, MOD_DEV, --gameDir, ., --assetsDir, C:\Users\User\.gradle\caches\forge_gradle\assets, --assetIndex, 1.18]
+[17Ð°Ð¿Ñ€.2022 21:52:43.281] [main/WARN] [mixin/]: Reference map 'slaviccraft.refmap.json' for slaviccraft.mixins.json could not be read. If this is a development environment you can ignore this message
+[21:52:52] [Render thread/WARN]: Assets URL 'union:/C:/Users/User/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.18.1-39.0.64_mapped_official_1.18.1/forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/assets/.mcassetsroot' uses unexpected schema
+[21:52:52] [Render thread/WARN]: Assets URL 'union:/C:/Users/User/.gradle/caches/forge_gradle/minecraft_user_repo/net/minecraftforge/forge/1.18.1-39.0.64_mapped_official_1.18.1/forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/data/.mcassetsroot' uses unexpected schema
+[17Ð°Ð¿Ñ€.2022 21:52:52.704] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[21:52:52] [Render thread/INFO]: Setting user: Dev
+[21:52:52] [Render thread/INFO]: Backend library: LWJGL version 3.2.2 SNAPSHOT
+[21:52:53] [Render thread/ERROR]: Null comment for config option server, this is invalid and may be disallowed in the future.
+[21:52:54] [modloading-worker-0/INFO]: Forge mod loading, version 39.0.64, for MC 1.18.1 with MCP 20211210.034407
+[21:52:54] [modloading-worker-0/INFO]: MinecraftForge v39.0.64 Initialized
+[17Ð°Ð¿Ñ€.2022 21:52:57.125] [Render thread/INFO] [com.mojang.text2speech.NarratorWindows/]: Narrator library for x64 successfully loaded
+[21:52:58] [Render thread/INFO]: Reloading ResourceManager: Default, Mod Resources
+[21:53:16] [Worker-Main-5/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/duckweed_1
+[21:53:16] [Worker-Main-5/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/duckweed
+[21:53:16] [Worker-Main-5/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/duckweed_2
+[21:53:16] [Worker-Main-5/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/dryer_top
+[21:53:16] [Worker-Main-5/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/dryer
+[21:53:18] [Worker-Main-9/ERROR]: Using missing texture, unable to load slaviccraft:textures/mob_effect/forest_wrath.png : java.io.FileNotFoundException: slaviccraft:textures/mob_effect/forest_wrath.png
+[21:53:18] [Worker-Main-8/ERROR]: Adding duplicate key 'ResourceKey[minecraft:worldgen/configured_feature / minecraft:slavic_nettle_flower]' to registry
+[17Ð°Ð¿Ñ€.2022 21:53:19.125] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Starting version check at https://files.minecraftforge.net/net/minecraftforge/forge/promotions_slim.json
+[17Ð°Ð¿Ñ€.2022 21:53:20.842] [Forge Version Check/INFO] [net.minecraftforge.fml.VersionChecker/]: [forge] Found status: OUTDATED Current: 39.0.64 Target: 39.1.0
+[21:53:26] [Render thread/WARN]: Missing sound for event: slaviccraft:pounder
+[21:53:26] [Render thread/INFO]: OpenAL initialized on device OpenAL Soft on Ð”Ð¸Ð½Ð°Ð¼Ð¸ÐºÐ¸ (Realtek High Definition Audio)
+[21:53:26] [Render thread/INFO]: Sound engine started
+[21:53:26] [Render thread/INFO]: Created: 1024x512x0 minecraft:textures/atlas/blocks.png-atlas
+[21:53:26] [Render thread/INFO]: Created: 256x128x0 minecraft:textures/atlas/signs.png-atlas
+[21:53:26] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[21:53:26] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[21:53:26] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/chest.png-atlas
+[21:53:26] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/beds.png-atlas
+[21:53:26] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[21:53:29] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[21:53:29] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[21:53:29] [Render thread/INFO]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[21:53:30] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
+[21:55:14] [Render thread/INFO]: Injecting existing registry data into this CLIENT instance
+[21:55:14] [Render thread/INFO]: Registry minecraft:point_of_interest_type: Found a missing id from the world slaviccraft:ex
+[21:55:14] [Render thread/INFO]: Registry minecraft:villager_profession: Found a missing id from the world slaviccraft:ex
+[21:55:14] [Render thread/ERROR]: Unidentified mapping from registry minecraft:point_of_interest_type
+	slaviccraft:ex: 22
+
+[21:55:14] [Render thread/ERROR]: Unidentified mapping from registry minecraft:villager_profession
+	slaviccraft:ex: 15
+
+[21:55:14] [Render thread/WARN]: Forge Mod Loader detected missing registry entries.
+
+There are 2 missing entries in this save.
+If you continue the missing entries will get removed.
+A world backup will be automatically created in your saves directory.
+
+
+[21:55:14] [Render thread/WARN]: Missing minecraft:villager_profession:
+    slaviccraft:ex
+
+Missing minecraft:point_of_interest_type:
+    slaviccraft:ex
+
+
+[21:55:14] [Render thread/ERROR]: There are unidentified mappings in this world - we are going to attempt to process anyway
+[21:55:14] [Render thread/WARN]: Registry minecraft:villager_profession: Object did not get ID it asked for. Name: slaviccraft:herbalist Expected: 15 Got: 16
+[21:55:14] [Render thread/WARN]: Registry minecraft:point_of_interest_type: Object did not get ID it asked for. Name: slaviccraft:herbalist Expected: 22 Got: 23
+[21:55:15] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[21:55:15] [Render thread/WARN]: Ambiguity between arguments [teleport, location] and [teleport, targets] with inputs: [0.1 -0.5 .9, 0 0 0]
+[21:55:15] [Render thread/WARN]: Ambiguity between arguments [teleport, destination] and [teleport, targets] with inputs: [Player, 0123, @e, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[21:55:15] [Render thread/WARN]: Ambiguity between arguments [teleport, targets] and [teleport, destination] with inputs: [Player, 0123, dd12be42-52a9-4a91-a8a1-11c01849e498]
+[21:55:15] [Render thread/WARN]: Ambiguity between arguments [teleport, targets, location] and [teleport, targets, destination] with inputs: [0.1 -0.5 .9, 0 0 0]
+[21:55:15] [Render thread/INFO]: Reloading ResourceManager: Default, , geckolib-1.18-forge-3.0.11_mapped_official_1.18.1.jar, main
+[21:55:18] [Render thread/ERROR]: Parsing error loading recipe slaviccraft:raveneye_balm
 com.google.gson.JsonSyntaxException: Unknown item 'slaviccraft:raveneye_powder'
 	at net.minecraft.world.item.crafting.ShapedRecipe.lambda$itemFromJson$2(ShapedRecipe.java:276) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -98,7 +127,7 @@ com.google.gson.JsonSyntaxException: Unknown item 'slaviccraft:raveneye_powder'
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?]
-[18:28:31] [Render thread/ERROR]: Parsing error loading recipe slaviccraft:crysanths_fresh
+[21:55:18] [Render thread/ERROR]: Parsing error loading recipe slaviccraft:crysanths_fresh
 com.google.gson.JsonSyntaxException: Unknown item 'slaviccraft:crysanths'
 	at net.minecraft.world.item.crafting.ShapedRecipe.lambda$itemFromJson$2(ShapedRecipe.java:276) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -156,7 +185,7 @@ com.google.gson.JsonSyntaxException: Unknown item 'slaviccraft:crysanths'
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?]
-[18:28:31] [Render thread/ERROR]: Parsing error loading recipe slaviccraft:house_brownie_altar
+[21:55:18] [Render thread/ERROR]: Parsing error loading recipe slaviccraft:house_brownie_altar
 com.google.gson.JsonSyntaxException: Pattern references symbol 'B' but it's not defined in the key
 	at net.minecraft.world.item.crafting.ShapedRecipe.dissolvePattern(ShapedRecipe.java:150) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?]
 	at net.minecraft.world.item.crafting.ShapedRecipe$Serializer.fromJson(ShapedRecipe.java:293) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?]
@@ -207,7 +236,7 @@ com.google.gson.JsonSyntaxException: Pattern references symbol 'B' but it's not 
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?]
-[18:28:31] [Render thread/ERROR]: Parsing error loading recipe slaviccraft:raveneye_fresh
+[21:55:18] [Render thread/ERROR]: Parsing error loading recipe slaviccraft:raveneye_fresh
 com.google.gson.JsonSyntaxException: Unknown item 'slaviccraft:raveneye'
 	at net.minecraft.world.item.crafting.ShapedRecipe.lambda$itemFromJson$2(ShapedRecipe.java:276) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -265,8 +294,8 @@ com.google.gson.JsonSyntaxException: Unknown item 'slaviccraft:raveneye'
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?]
-[18:28:31] [Render thread/INFO]: Loaded 7 recipes
-[18:28:32] [Render thread/ERROR]: Couldn't parse loot table slaviccraft:blocks/crysanths
+[21:55:18] [Render thread/INFO]: Loaded 7 recipes
+[21:55:19] [Render thread/ERROR]: Couldn't parse loot table slaviccraft:blocks/crysanths
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'slaviccraft:crysanths'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:99) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -351,7 +380,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?]
-[18:28:32] [Render thread/ERROR]: Couldn't parse loot table slaviccraft:blocks/betony
+[21:55:20] [Render thread/ERROR]: Couldn't parse loot table slaviccraft:blocks/betony
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'slaviccraft:betony'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:99) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -436,7 +465,7 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?]
-[18:28:33] [Render thread/ERROR]: Couldn't parse loot table slaviccraft:blocks/raveneye
+[21:55:20] [Render thread/ERROR]: Couldn't parse loot table slaviccraft:blocks/raveneye
 com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown string 'slaviccraft:raveneye'
 	at net.minecraft.util.GsonHelper.lambda$convertToItem$0(GsonHelper.java:99) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?]
 	at java.util.Optional.orElseThrow(Optional.java:403) ~[?:?]
@@ -521,138 +550,94 @@ com.google.gson.JsonSyntaxException: Expected name to be an item, was unknown st
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-9.1.0.jar%2310!/:?]
 	at cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:149) [bootstraplauncher-1.0.0.jar:?]
-[18:28:33] [Render thread/INFO]: Loaded 1141 advancements
-[13àïð.2022 18:28:34.802] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
-[18:28:34] [Server thread/INFO]: Starting integrated minecraft server version 1.18.1
-[18:28:34] [Server thread/INFO]: Generating keypair
-[18:28:35] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
-[18:28:36] [Render thread/INFO]: Preparing spawn area: 0%
-[18:28:36] [Render thread/INFO]: Preparing spawn area: 0%
-[18:28:36] [Render thread/INFO]: Preparing spawn area: 0%
-[18:28:37] [Render thread/INFO]: Preparing spawn area: 0%
-[18:28:37] [Render thread/INFO]: Preparing spawn area: 0%
-[18:28:38] [Render thread/INFO]: Preparing spawn area: 0%
-[18:28:38] [Render thread/INFO]: Preparing spawn area: 0%
-[18:28:39] [Render thread/INFO]: Preparing spawn area: 0%
-[18:28:40] [Render thread/INFO]: Preparing spawn area: 6%
-[18:28:40] [Render thread/INFO]: Preparing spawn area: 6%
-[18:28:40] [Render thread/INFO]: Preparing spawn area: 38%
-[18:28:41] [Render thread/INFO]: Preparing spawn area: 60%
-[18:28:41] [Render thread/INFO]: Preparing spawn area: 60%
-[18:28:42] [Render thread/INFO]: Preparing spawn area: 83%
-[18:28:42] [Render thread/INFO]: Preparing spawn area: 90%
-[18:28:43] [Server thread/INFO]: Successfully initialized permission handler forge:default_handler
-[18:28:43] [Render thread/INFO]: Time elapsed: 7875 ms
-[18:28:43] [Server thread/INFO]: Changing view distance to 8, from 10
-[18:28:43] [Server thread/INFO]: Changing simulation distance to 8, from 0
-[18:28:44] [Netty Local Client IO #0/INFO]: Connected to a modded server.
-[18:28:44] [Server thread/INFO]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@354e331b
-[18:28:45] [Server thread/INFO]: Dev[local:E:17269815] logged in with entity id 3 at (5.428012885787835, -60.0, 16.82028277737421)
-[18:28:45] [Server thread/INFO]: Dev joined the game
-[18:28:48] [Render thread/INFO]: Loaded 25 advancements
-[18:28:54] [Server thread/INFO]: Saving and pausing game...
-[18:28:54] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:28:54] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:28:54] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:29:04] [Server thread/INFO]: Saving and pausing game...
-[18:29:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:29:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:29:04] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:29:44] [Server thread/INFO]: Saving and pausing game...
-[18:29:44] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:29:44] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:29:44] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:30:07] [Server thread/INFO]: Saving and pausing game...
-[18:30:07] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:30:07] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:30:07] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:30:52] [Server thread/INFO]: Saving and pausing game...
-[18:30:52] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:30:52] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:30:52] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:31:15] [Server thread/INFO]: Saving and pausing game...
-[18:31:15] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:31:15] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:31:15] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:33:20] [Server thread/INFO]: Saving and pausing game...
-[18:33:20] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:33:20] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:33:20] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[13àïð.2022 18:33:27.427] [Thread-14/ERROR] [net.minecraftforge.eventbus.EventSubclassTransformer/EVENTBUS]: An error occurred building event handler
-java.lang.NullPointerException: Cannot invoke "java.lang.ClassLoader.loadClass(String)" because the return value of "java.lang.Thread.getContextClassLoader()" is null
-	at net.minecraftforge.eventbus.EventSubclassTransformer.buildEvents(EventSubclassTransformer.java:62) ~[eventbus-5.0.7.jar:?]
-	at net.minecraftforge.eventbus.EventSubclassTransformer.transform(EventSubclassTransformer.java:44) ~[eventbus-5.0.7.jar:?]
-	at net.minecraftforge.eventbus.EventBusEngine.processClass(EventBusEngine.java:21) ~[eventbus-5.0.7.jar:?]
-	at net.minecraftforge.eventbus.service.ModLauncherService.processClassWithFlags(ModLauncherService.java:20) ~[eventbus-5.0.7.jar:5.0.7+5.0.7+master.6d3407cc]
-	at cpw.mods.modlauncher.LaunchPluginHandler.offerClassNodeToPlugins(LaunchPluginHandler.java:88) ~[modlauncher-9.1.0.jar:?]
-	at cpw.mods.modlauncher.ClassTransformer.transform(ClassTransformer.java:120) ~[modlauncher-9.1.0.jar:?]
-	at cpw.mods.modlauncher.TransformingClassLoader.maybeTransformClassBytes(TransformingClassLoader.java:50) ~[modlauncher-9.1.0.jar:?]
-	at cpw.mods.cl.ModuleClassLoader.readerToClass(ModuleClassLoader.java:110) ~[securejarhandler-1.0.1.jar:?]
-	at cpw.mods.cl.ModuleClassLoader.lambda$findClass$16(ModuleClassLoader.java:213) ~[securejarhandler-1.0.1.jar:?]
-	at cpw.mods.cl.ModuleClassLoader.loadFromModule(ModuleClassLoader.java:223) ~[securejarhandler-1.0.1.jar:?]
-	at cpw.mods.cl.ModuleClassLoader.findClass(ModuleClassLoader.java:213) ~[securejarhandler-1.0.1.jar:?]
-	at cpw.mods.cl.ModuleClassLoader.loadClass(ModuleClassLoader.java:130) ~[securejarhandler-1.0.1.jar:?]
-	at java.lang.ClassLoader.loadClass(ClassLoader.java:520) ~[?:?]
-	at com.mojang.blaze3d.platform.GlDebug.printDebugLog(GlDebug.java:100) ~[?:?]
-	at org.lwjgl.opengl.GLDebugMessageCallbackI.callback(GLDebugMessageCallbackI.java:39) [lwjgl-opengl-3.2.2.jar%2353!/:build 10]
-[18:33:27] [Thread-14/INFO]: OpenGL debug message: id=1280, source=API, type=ERROR, severity=HIGH, message='GL_INVALID_ENUM error generated. Operation is not valid from the core profile.'
-[18:33:30] [Server thread/INFO]: Saving and pausing game...
-[18:33:30] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:33:30] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:33:30] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:33:45] [Server thread/INFO]: Dev was slain by entity.slaviccraft.slavicleshin
-[18:33:45] [Render thread/INFO]: [CHAT] Dev was slain by entity.slaviccraft.slavicleshin
-[18:41:43] [Server thread/INFO]: Saving and pausing game...
-[18:41:43] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:41:43] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:41:43] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:42:37] [Server thread/INFO]: [Dev: Gave 64 [Enchanted Golden Apple] to Dev]
-[18:42:37] [Render thread/INFO]: [CHAT] Gave 64 [Enchanted Golden Apple] to Dev
-[18:42:37] [Render thread/INFO]: Loaded 26 advancements
-[18:42:39] [Render thread/INFO]: Loaded 41 advancements
-[18:42:47] [Server thread/INFO]: [Dev: Summoned new entity.slaviccraft.slavicleshin]
-[18:42:47] [Render thread/INFO]: [CHAT] Summoned new entity.slaviccraft.slavicleshin
-[18:42:59] [Server thread/INFO]: Saving and pausing game...
-[18:42:59] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:42:59] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:42:59] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:43:54] [Server thread/INFO]: Dev was slain by entity.slaviccraft.slavicleshin
-[18:43:54] [Render thread/INFO]: [CHAT] Dev was slain by entity.slaviccraft.slavicleshin
-[18:44:17] [Server thread/INFO]: Villager Villager['Villager'/1, l='ServerLevel[New World]', x=-13.84, y=-60.00, z=72.84] died, message: 'Villager fell out of the world'
-[18:44:17] [Server thread/INFO]: [Dev: Killed 3 entities]
-[18:44:17] [Render thread/INFO]: Villager Villager['Villager'/1, l='ClientLevel', x=-14.12, y=-60.00, z=73.15] died, message: 'Villager died'
-[18:44:17] [Render thread/INFO]: [CHAT] Killed 3 entities
-[18:44:21] [Server thread/INFO]: [Dev: Set own game mode to Creative Mode]
-[18:44:21] [Render thread/INFO]: [CHAT] Set own game mode to Creative Mode
-[18:44:22] [Render thread/INFO]: Loaded 50 advancements
-[18:44:22] [Render thread/INFO]: Loaded 63 advancements
-[18:44:25] [Server thread/INFO]: Dev has made the advancement [Getting an Upgrade]
-[18:44:25] [Render thread/INFO]: [CHAT] Dev has made the advancement [Getting an Upgrade]
-[18:44:25] [Render thread/INFO]: Loaded 71 advancements
-[18:44:25] [Render thread/INFO]: Loaded 74 advancements
-[18:44:26] [Server thread/INFO]: [Dev: Set own game mode to Survival Mode]
-[18:44:26] [Render thread/INFO]: [CHAT] Set own game mode to Survival Mode
-[18:44:27] [Server thread/INFO]: [Dev: Set own game mode to Creative Mode]
-[18:44:27] [Render thread/INFO]: [CHAT] Set own game mode to Creative Mode
-[18:53:58] [Server thread/INFO]: [Dev: Summoned new entity.slaviccraft.slavicleshin]
-[18:53:58] [Render thread/INFO]: [CHAT] Summoned new entity.slaviccraft.slavicleshin
-[18:54:05] [Server thread/INFO]: Saving and pausing game...
-[18:54:05] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:54:05] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:54:05] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:54:49] [Server thread/INFO]: Saving and pausing game...
-[18:54:49] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:54:49] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:54:49] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:55:51] [Server thread/INFO]: Saving and pausing game...
-[18:55:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:55:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:55:51] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:56:34] [Server thread/INFO]: Saving and pausing game...
-[18:56:34] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:56:34] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:56:34] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
-[18:57:18] [Server thread/INFO]: Saving and pausing game...
-[18:57:18] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:overworld
-[18:57:18] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_nether
-[18:57:18] [Server thread/INFO]: Saving chunks for level 'ServerLevel[New World]'/minecraft:the_end
+[21:55:20] [Render thread/ERROR]: Parsing error loading custom advancement slaviccraft:slaviccraft/root: Missing criteria, expected to find a JsonObject
+[21:55:20] [Render thread/INFO]: Loaded 1142 advancements
+[17Ð°Ð¿Ñ€.2022 21:55:21.746] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: authHost='https://authserver.mojang.com', accountsHost='https://api.mojang.com', sessionHost='https://sessionserver.mojang.com', servicesHost='https://api.minecraftservices.com', name='PROD'
+[21:55:21] [Server thread/INFO]: Starting integrated minecraft server version 1.18.1
+[21:55:21] [Server thread/INFO]: Generating keypair
+[21:55:22] [Server thread/INFO]: Preparing start region for dimension minecraft:overworld
+[21:55:22] [Render thread/INFO]: Preparing spawn area: 0%
+[21:55:22] [Render thread/INFO]: Preparing spawn area: 0%
+[21:55:23] [Render thread/INFO]: Preparing spawn area: 0%
+[21:55:23] [Render thread/INFO]: Preparing spawn area: 0%
+[21:55:24] [Render thread/INFO]: Preparing spawn area: 4%
+[21:55:24] [Render thread/INFO]: Preparing spawn area: 12%
+[21:55:25] [Render thread/INFO]: Preparing spawn area: 22%
+[21:55:25] [Render thread/INFO]: Preparing spawn area: 36%
+[21:55:26] [Render thread/INFO]: Preparing spawn area: 53%
+[21:55:26] [Render thread/INFO]: Preparing spawn area: 90%
+[21:55:27] [Server thread/INFO]: Successfully initialized permission handler forge:default_handler
+[21:55:27] [Render thread/INFO]: Time elapsed: 5033 ms
+[21:55:27] [Server thread/INFO]: Changing view distance to 8, from 10
+[21:55:27] [Server thread/INFO]: Changing simulation distance to 8, from 0
+[21:55:28] [Netty Local Client IO #0/INFO]: Connected to a modded server.
+[21:55:28] [Server thread/INFO]: Using new advancement loading for net.minecraft.server.PlayerAdvancements@248e9716
+[21:55:28] [Server thread/INFO]: Dev[local:E:4bb8518e] logged in with entity id 47 at (-28.154873737836493, -58.6188208180563, 114.33602431031443)
+[21:55:28] [Server thread/INFO]: Dev joined the game
+[21:55:29] [Render thread/INFO]: Loaded 1142 advancements
+[21:55:40] [Server thread/INFO]: Villager Villager['Villager'/7, l='ServerLevel[slavic structures]', x=17.50, y=-60.00, z=68.75] died, message: 'Villager fell out of the world'
+[21:55:40] [Server thread/INFO]: Villager Villager['Villager'/23, l='ServerLevel[slavic structures]', x=-39.95, y=-60.00, z=92.70] died, message: 'Villager fell out of the world'
+[21:55:40] [Server thread/INFO]: Villager Villager['Cleric'/25, l='ServerLevel[slavic structures]', x=-114.18, y=-60.00, z=16.82] died, message: 'Cleric fell out of the world'
+[21:55:40] [Server thread/INFO]: Villager Villager['Farmer'/26, l='ServerLevel[slavic structures]', x=-114.08, y=-60.00, z=17.71] died, message: 'Farmer fell out of the world'
+[21:55:40] [Server thread/INFO]: Villager Villager['Cartographer'/27, l='ServerLevel[slavic structures]', x=-136.27, y=-60.00, z=32.27] died, message: 'Cartographer fell out of the world'
+[21:55:40] [Server thread/INFO]: Villager Villager['Cartographer'/44, l='ServerLevel[slavic structures]', x=-134.87, y=-59.00, z=76.30] died, message: 'Cartographer fell out of the world'
+[21:55:40] [Server thread/INFO]: Villager Villager['Nitwit'/45, l='ServerLevel[slavic structures]', x=-134.16, y=-59.00, z=76.30] died, message: 'Nitwit fell out of the world'
+[21:55:40] [Server thread/INFO]: Villager Villager['Weaponsmith'/46, l='ServerLevel[slavic structures]', x=-162.50, y=-60.00, z=39.92] died, message: 'Weaponsmith fell out of the world'
+[21:55:40] [Server thread/INFO]: [Dev: Killed 48 entities]
+[21:55:40] [Render thread/INFO]: Villager Villager['Villager'/7, l='ClientLevel', x=17.73, y=-60.00, z=68.36] died, message: 'Villager died'
+[21:55:40] [Render thread/INFO]: Villager Villager['Villager'/23, l='ClientLevel', x=-40.05, y=-60.00, z=92.60] died, message: 'Villager died'
+[21:55:40] [Render thread/INFO]: Villager Villager['Cartographer'/44, l='ClientLevel', x=-134.91, y=-59.00, z=76.30] died, message: 'Cartographer died'
+[21:55:40] [Render thread/INFO]: Villager Villager['Nitwit'/45, l='ClientLevel', x=-134.13, y=-59.00, z=76.30] died, message: 'Nitwit died'
+[21:55:40] [Render thread/INFO]: [CHAT] Killed 48 entities
+[21:56:06] [Server thread/INFO]: Saving and pausing game...
+[21:56:06] [Server thread/INFO]: Saving chunks for level 'ServerLevel[slavic structures]'/minecraft:overworld
+[21:56:06] [Server thread/INFO]: Saving chunks for level 'ServerLevel[slavic structures]'/minecraft:the_nether
+[21:56:06] [Server thread/INFO]: Saving chunks for level 'ServerLevel[slavic structures]'/minecraft:the_end
+[21:56:31] [Server thread/INFO]: Villager Villager['Villager'/140, l='ServerLevel[slavic structures]', x=-37.37, y=-60.00, z=105.23] died, message: 'Villager was slain by Dev'
+[21:56:31] [Render thread/INFO]: Villager Villager['Villager'/140, l='ClientLevel', x=-36.85, y=-59.81, z=105.41] died, message: 'Villager died'
+[21:57:36] [Render thread/INFO]: [CHAT] [Debug]: Reloaded resource packs
+[21:57:36] [Render thread/INFO]: Reloading ResourceManager: Default, Mod Resources
+[21:57:36] [Server thread/INFO]: Saving and pausing game...
+[21:57:36] [Server thread/INFO]: Saving chunks for level 'ServerLevel[slavic structures]'/minecraft:overworld
+[21:57:37] [Server thread/INFO]: Saving chunks for level 'ServerLevel[slavic structures]'/minecraft:the_nether
+[21:57:37] [Server thread/INFO]: Saving chunks for level 'ServerLevel[slavic structures]'/minecraft:the_end
+[21:57:49] [Worker-Main-9/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/duckweed_1
+[21:57:49] [Worker-Main-9/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/duckweed
+[21:57:49] [Worker-Main-9/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/duckweed_2
+[21:57:49] [Worker-Main-9/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/dryer_top
+[21:57:49] [Worker-Main-9/WARN]: Unable to resolve texture reference: #missing in slaviccraft:block/dryer
+[21:57:49] [Worker-Main-14/ERROR]: Using missing texture, unable to load slaviccraft:textures/mob_effect/forest_wrath.png : java.io.FileNotFoundException: slaviccraft:textures/mob_effect/forest_wrath.png
+[21:57:54] [Render thread/WARN]: Missing sound for event: slaviccraft:pounder
+[21:57:54] [Render thread/INFO]: OpenAL initialized on device OpenAL Soft on Ð”Ð¸Ð½Ð°Ð¼Ð¸ÐºÐ¸ (Realtek High Definition Audio)
+[21:57:54] [Render thread/INFO]: Sound engine started
+[21:57:54] [Render thread/INFO]: Created: 1024x512x0 minecraft:textures/atlas/blocks.png-atlas
+[21:57:54] [Render thread/INFO]: Created: 256x128x0 minecraft:textures/atlas/signs.png-atlas
+[21:57:54] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/banner_patterns.png-atlas
+[21:57:54] [Render thread/INFO]: Created: 512x512x0 minecraft:textures/atlas/shield_patterns.png-atlas
+[21:57:54] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/chest.png-atlas
+[21:57:54] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/beds.png-atlas
+[21:57:54] [Render thread/INFO]: Created: 512x256x0 minecraft:textures/atlas/shulker_boxes.png-atlas
+[21:57:56] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/particles.png-atlas
+[21:57:56] [Render thread/INFO]: Created: 256x256x0 minecraft:textures/atlas/paintings.png-atlas
+[21:57:56] [Render thread/INFO]: Created: 128x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[21:58:06] [Render thread/INFO]: [CHAT] Saved screenshot as 2022-04-17_21.58.06.png
+[21:58:08] [Render thread/INFO]: [CHAT] Saved screenshot as 2022-04-17_21.58.07.png
+[21:58:10] [Render thread/INFO]: [CHAT] Saved screenshot as 2022-04-17_21.58.10.png
+[22:06:09] [Server thread/INFO]: Saving and pausing game...
+[22:06:09] [Server thread/INFO]: Saving chunks for level 'ServerLevel[slavic structures]'/minecraft:overworld
+[22:06:09] [Server thread/INFO]: Saving chunks for level 'ServerLevel[slavic structures]'/minecraft:the_nether
+[22:06:09] [Server thread/INFO]: Saving chunks for level 'ServerLevel[slavic structures]'/minecraft:the_end
+[22:06:10] [Server thread/INFO]: Dev lost connection: Disconnected
+[22:06:10] [Server thread/INFO]: Dev left the game
+[22:06:10] [Server thread/INFO]: Stopping singleplayer server as player logged out
+[22:06:10] [Server thread/INFO]: Stopping server
+[22:06:10] [Server thread/INFO]: Saving players
+[22:06:10] [Server thread/INFO]: Saving worlds
+[22:06:10] [Server thread/INFO]: Saving chunks for level 'ServerLevel[slavic structures]'/minecraft:overworld
+[22:06:10] [Server thread/INFO]: Saving chunks for level 'ServerLevel[slavic structures]'/minecraft:the_nether
+[22:06:10] [Server thread/INFO]: Saving chunks for level 'ServerLevel[slavic structures]'/minecraft:the_end
+[22:06:10] [Server thread/INFO]: ThreadedAnvilChunkStorage (slavic structures): All chunks are saved
+[22:06:10] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[22:06:10] [Server thread/INFO]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[22:06:10] [Server thread/INFO]: ThreadedAnvilChunkStorage: All dimensions are saved
+[22:06:11] [Render thread/INFO]: Stopping!

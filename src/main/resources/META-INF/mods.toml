@@ -4,22 +4,22 @@ license="MIT"
 [[mods]]
 modId="slaviccraft"
 version="${file.jarVersion}"
-displayName="Idolatry"
-logoFile="logo.png"
+displayName="Book of Veles"
+logoFile="pack.png"
 credits="Slavic Mod"
 authors="Veles"
 description='''
-A tutorial mod by Cy4.
+Mod for various Slavic things
 '''
 
-[[dependencies.tutorialmod]] 
+[[dependencies.slaviccarft]] 
     modId="forge"
     mandatory=true
     versionRange="[39,)"
     ordering="NONE"
     side="BOTH"
 
-[[dependencies.tutorialmod]]
+[[dependencies.slaviccarft]]
     modId="minecraft"
     mandatory=true
     versionRange="[1.18.1,1.19)"

@@ -156,7 +156,7 @@ public class LeshinIdolTileEntity extends BlockEntity{
               double x1 = 5*(1.f-(c/100.f))*0.5f*  Math.cos(angle * Math.PI / 180);
               double z1 = 5*(1.f-(c/100.f))*0.5f* Math.sin(angle * Math.PI / 180);
            //   world.addParticle(ParticleInit.AMBER_PARTICLE.get(),d0+x1, d1+rand.nextDouble(), d2+z1, 0, (1.f-(c*1.f/100.f))*0.01, 0);
-              world.addParticle(ParticleTypes.DRIPPING_LAVA,d0+x1, d1, d2+z1, 0, (1.f-(c*1.f/100.f))*0.1, 0);
+              world.addParticle(ParticleInit.IDOL_PARTICLE.get(),d0+x1, d1, d2+z1, 0, (1.f-(c*1.f/100.f))*0.1, 0);
               world.addParticle(ParticleTypes.MYCELIUM,d0+x1, d1, d2+z1, 0,6.5, 0);
         }
        

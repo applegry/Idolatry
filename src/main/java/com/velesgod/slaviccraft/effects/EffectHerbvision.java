@@ -4,6 +4,10 @@ import java.util.List;
 import java.util.Random;
 
 import com.velesgod.slaviccraft.SlavicCraftMod;
+import com.velesgod.slaviccraft.blocks.herbs.BaseHerb;
+import com.velesgod.slaviccraft.blocks.herbs.BaseTallPlant;
+import com.velesgod.slaviccraft.core.init.BlockInit;
+import com.velesgod.slaviccraft.core.init.ParticleInit;
 
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.particles.ParticleTypes;
@@ -15,6 +19,7 @@ import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.alchemy.Potion;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.BushBlock;
 import net.minecraft.world.level.block.FlowerBlock;
 import net.minecraft.world.level.block.TallFlowerBlock;
 import net.minecraft.world.level.block.state.BlockState;
@@ -68,19 +73,21 @@ public class EffectHerbvision extends SlavicEffect {
 	    			Player player = (Player)entity;
 	    			BlockPos pos = new BlockPos(player.getPosition(1.f));
 	    			Random r = player.level.random;
-	    		for(int x=-5;x<=6;x++)
-	    			for(int z=-5;z<=6;z++) {
-	    				BlockPos tmp =new BlockPos(pos.getX()+x,pos.getY(),pos.getZ()+z);
+	    			for(int x=-40;x<41;x++)
+		    		for(int y=-40;y<41;y++)
+	    			for(int z=-40;z<41;z++) {
+	    				BlockPos tmp =new BlockPos(player.getX()+x,player.getY()+y,player.getZ()+z);
 	    				BlockState state = player.level.getBlockState(tmp);
-	    				double d = pos.distSqr(tmp);
-	    				if(d<21 && (state.getBlock() instanceof FlowerBlock || state.getBlock() instanceof TallFlowerBlock )) {
+	    				double d = player.distanceToSqr(tmp.getX(),tmp.getY(),tmp.getZ());
+	    				
+	    				if(d<360 && (state.getBlock() instanceof BaseHerb || state.getBlock() instanceof BaseTallPlant || state.getBlock() == BlockInit.DEEPROOT.get())) {
 	    					
 	    				      for(int i = 0; i < 1; ++i) {
 	    					         double d3 = r.nextGaussian() * 0.02D;
 	    					         double d4 = r.nextGaussian() * 0.02D;
 	    					         double d5 = r.nextGaussian() * 0.02D;
 	    					         player.level.addParticle(
-	    					        		 ParticleTypes.END_ROD, 
+	    					        		 ParticleInit.SPARKLE_PARTICLE.get(), 
 	    					        		 (double)tmp.getX() + (double)0.13125F + (double)0.7375F * (double)r.nextFloat(), 
 	    					        		 (double)tmp.getY() + 0.5D + (double)r.nextFloat() * 0.5D, 
 	    					        		 (double)tmp.getZ() + (double)0.13125F + (double)0.7375F * (double)r.nextFloat(), 

@@ -28,8 +28,9 @@ public class ParticleTypeRaven extends TextureSheetParticle{
 		this.age = (int)(3.0D / (Math.random() * 4.0D));
 		this.hasPhysics = true;
 		
+		
 	}
-
+	
 	/*
 	 * Just like all other SpriteTexturedParticles this class is more or less copied, take a look at existing
 	 * particles and add change some numbers around until you get what you need!

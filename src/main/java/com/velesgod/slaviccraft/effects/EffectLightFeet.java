@@ -70,7 +70,10 @@ public class EffectLightFeet extends SlavicEffect {
 	    
 	    
 	    
-	    
+	    private void render() {
+			// TODO Auto-generated method stub
+
+		}
 
 //	    
 //	    @Override

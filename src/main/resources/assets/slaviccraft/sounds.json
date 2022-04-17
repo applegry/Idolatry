@@ -4,9 +4,34 @@
 		"subtitle":"slaviccraft.bloodget",
 		"sounds":["slaviccraft:blood_get"]
 	},
-	"pounder":{
+	"leshin_ambient":{
 		"category":"master",
-		"subtitle":"slaviccraft.pounder",
-		"sounds":["slaviccraft:pounder"]
+		"subtitle":"slaviccraft.leshin_ambient",
+		"sounds":["slaviccraft:leshin_ambient"]
+	},
+	"leshin_roar":{
+		"category":"master",
+		"subtitle":"slaviccraft.leshin_roar",
+		"sounds":["slaviccraft:leshin_roar"]
+	},
+	"leshin_activate":{
+		"category":"master",
+		"subtitle":"slaviccraft.leshin_activate",
+		"sounds":["slaviccraft:leshin_activate"]
+	},
+	"leshin_hit":{
+		"category":"master",
+		"subtitle":"slaviccraft.leshin_hit",
+		"sounds":["slaviccraft:leshin_hit"]
+	},
+	"leshin_barter":{
+		"category":"master",
+		"subtitle":"slaviccraft.leshin_barter",
+		"sounds":["slaviccraft:leshin_barter"]
+	},
+	"leshin_hurt":{
+		"category":"master",
+		"subtitle":"slaviccraft.leshin_hurt",
+		"sounds":["slaviccraft:leshin_hurt"]
 	}
 }

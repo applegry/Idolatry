@@ -1,0 +1,146 @@
+---- Minecraft Crash Report ----
+// You're mean.
+
+Time: 16.04.2022, 23:51
+Description: Ticking entity
+
+java.lang.IllegalArgumentException: bound must be finite and positive
+	at jdk.internal.util.random.RandomSupport.checkBound(RandomSupport.java:162) ~[?:?] {}
+	at java.util.random.RandomGenerator.nextDouble(RandomGenerator.java:589) ~[?:?] {}
+	at com.velesgod.slaviccraft.entity.SlavicLeshin.createParticles(SlavicLeshin.java:431) ~[%2381!/:?] {re:classloading}
+	at com.velesgod.slaviccraft.entity.SlavicLeshin.tick(SlavicLeshin.java:353) ~[%2381!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:649) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.Level.guardEntityTick(Level.java:487) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.lambda$tick$3(ServerLevel.java:316) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:54) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:296) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:868) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:808) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:86) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:668) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:258) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:833) [?:?] {}
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at jdk.internal.util.random.RandomSupport.checkBound(RandomSupport.java:162) ~[?:?] {}
+	at java.util.random.RandomGenerator.nextDouble(RandomGenerator.java:589) ~[?:?] {}
+	at com.velesgod.slaviccraft.entity.SlavicLeshin.createParticles(SlavicLeshin.java:431) ~[%2381!/:?] {re:classloading}
+	at com.velesgod.slaviccraft.entity.SlavicLeshin.tick(SlavicLeshin.java:353) ~[%2381!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tickNonPassenger(ServerLevel.java:649) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.Level.guardEntityTick(Level.java:487) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.lambda$tick$3(ServerLevel.java:316) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:54) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:296) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+-- Entity being ticked --
+Details:
+	Entity Type: slaviccraft:slavicleshin (com.velesgod.slaviccraft.entity.SlavicLeshin)
+	Entity ID: 44
+	Entity Name: 
+	Entity's Exact location: -17.26, -60.00, 49.11
+	Entity's Block location: World: (-18,-60,49), Section: (at 14,4,1 in -2,-4,3; chunk contains blocks -32,-64,48 to -17,319,63), Region: (-1,0; contains chunks -32,0 to -1,31, blocks -512,-64,0 to -1,319,511)
+	Entity's Momentum: 0.00, 0.00, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: null
+Stacktrace:
+	at net.minecraft.world.level.Level.guardEntityTick(Level.java:487) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.level.ServerLevel.lambda$tick$3(ServerLevel.java:316) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.world.level.entity.EntityTickList.forEach(EntityTickList.java:54) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading}
+	at net.minecraft.server.level.ServerLevel.tick(ServerLevel.java:296) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:868) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:808) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:86) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:668) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:258) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:833) [?:?] {}
+
+
+-- Affected level --
+Details:
+	All players: 1 total; [ServerPlayer['Dev'/2, l='ServerLevel[New World]', x=-23.02, y=-60.00, z=47.58]]
+	Chunk stats: 2298
+	Level dimension: minecraft:overworld
+	Level spawn location: World: (0,-60,0), Section: (at 0,4,0 in 0,-4,0; chunk contains blocks 0,-64,0 to 15,319,15), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,-64,0 to 511,319,511)
+	Level time: 58308 game time, 1000 day time
+	Level name: New World
+	Level game mode: Game mode: creative (ID 1). Hardcore: false. Cheats: true
+	Level weather: Rain time: 1 (now: false), thunder time: 1 (now: false)
+	Known server brands: forge
+	Level was modded: true
+	Level storage version: 0x04ABD - Anvil
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.tickChildren(MinecraftServer.java:868) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.tickServer(MinecraftServer.java:808) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.client.server.IntegratedServer.tickServer(IntegratedServer.java:86) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:runtimedistcleaner:A}
+	at net.minecraft.server.MinecraftServer.runServer(MinecraftServer.java:668) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at net.minecraft.server.MinecraftServer.lambda$spin$2(MinecraftServer.java:258) ~[forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp.jar%2377!/:?] {re:classloading,pl:accesstransformer:B}
+	at java.lang.Thread.run(Thread.java:833) [?:?] {}
+
+
+-- System Details --
+Details:
+	Minecraft Version: 1.18.1
+	Minecraft Version ID: 1.18.1
+	Operating System: Windows 10 (amd64) version 10.0
+	Java Version: 17.0.1, Eclipse Adoptium
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Eclipse Adoptium
+	Memory: 1061926776 bytes (1012 MiB) / 2464153600 bytes (2350 MiB) up to 3200253952 bytes (3052 MiB)
+	CPUs: 4
+	Processor Vendor: GenuineIntel
+	Processor Name: Intel(R) Core(TM) i3-8100 CPU @ 3.60GHz
+	Identifier: Intel64 Family 6 Model 158 Stepping 11
+	Microarchitecture: Coffee Lake
+	Frequency (GHz): 3,60
+	Number of physical packages: 1
+	Number of physical CPUs: 4
+	Number of logical CPUs: 4
+	Graphics card #0 name: NVIDIA GeForce GT 1030
+	Graphics card #0 vendor: NVIDIA (0x10de)
+	Graphics card #0 VRAM (MB): 2048,00
+	Graphics card #0 deviceId: 0x1d01
+	Graphics card #0 versionInfo: DriverVersion=30.0.14.7196
+	Memory slot #0 capacity (MB): 8192,00
+	Memory slot #0 clockSpeed (GHz): 2,40
+	Memory slot #0 type: DDR4
+	Memory slot #1 capacity (MB): 4096,00
+	Memory slot #1 clockSpeed (GHz): 2,40
+	Memory slot #1 type: DDR4
+	Virtual memory max (MB): 14061,38
+	Virtual memory used (MB): 12092,71
+	Swap memory total (MB): 1856,00
+	Swap memory used (MB): 203,23
+	JVM Flags: 2 total; -XX:+ShowCodeDetailsInExceptionMessages -XX:HeapDumpPath=MojangTricksIntelDriversForPerformance_javaw.exe_minecraft.exe.heapdump
+	Server Running: true
+	Player Count: 1 / 8; [ServerPlayer['Dev'/2, l='ServerLevel[New World]', x=-23.02, y=-60.00, z=47.58]]
+	Data Packs: vanilla, mod:forge, mod:geckolib3 (incompatible), mod:slaviccraft (incompatible)
+	Type: Integrated Server (map_client.txt)
+	Is Modded: Definitely; Client brand changed to 'forge'; Server brand changed to 'forge'
+	ModLauncher: 9.1.0+9.1.0+main.6690ee51
+	ModLauncher launch target: forgeclientuserdev
+	ModLauncher naming: mcp
+	ModLauncher services: 
+		 mixin PLUGINSERVICE 
+		 eventbus PLUGINSERVICE 
+		 object_holder_definalize PLUGINSERVICE 
+		 runtime_enum_extender PLUGINSERVICE 
+		 capability_token_subclass PLUGINSERVICE 
+		 accesstransformer PLUGINSERVICE 
+		 runtimedistcleaner PLUGINSERVICE 
+		 mixin TRANSFORMATIONSERVICE 
+		 fml TRANSFORMATIONSERVICE 
+	FML Language Providers: 
+		minecraft@1.0
+		javafml@null
+	Mod List: 
+		forge-1.18.1-39.0.64_mapped_official_1.18.1-recomp|Minecraft                     |minecraft                     |1.18.1              |DONE      |Manifest: a1:d4:5e:04:4f:d3:d6:e0:7b:37:97:cf:77:b0:de:ad:4a:47:ce:8c:96:49:5f:0a:cf:8c:ae:b2:6d:4b:8a:3f
+		                                                  |Forge                         |forge                         |39.0.64             |DONE      |Manifest: NOSIGNATURE
+		geckolib-1.18-forge-3.0.11_mapped_official_1.18.1.|GeckoLib                      |geckolib3                     |3.0.11              |DONE      |Manifest: NOSIGNATURE
+		main                                              |Idolatry                      |slaviccraft                   |0.0NONE             |DONE      |Manifest: NOSIGNATURE
+	Crash Report UUID: 8d31d1ec-4e5e-484f-a6a2-21b64a421cd6
+	FML: 39.0
+	Forge: net.minecraftforge:39.0.64

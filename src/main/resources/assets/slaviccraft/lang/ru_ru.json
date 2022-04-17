@@ -79,5 +79,7 @@
 "block.slaviccraft.swiftfoot":"Быстроног",
 "block.slaviccraft.cattails":"Рогоз",
 "block.slaviccraft.linen_block":"Лён",
-"itemGroup.PaganCraft": "Язычество"
+"itemGroup.PaganCraft": "Велесова Книга",
+
+"entity.slaviccraft.slavicleshin": "Леший"
 }
